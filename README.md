@@ -1,12 +1,19 @@
-# React + Vite
+# React JWT Auth Template
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## About
 
-Currently, two official plugins are available:
+This repo is a React JWT Auth template meant to be paired with a back-end app utilizing JWT tokens.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Getting started
 
-## Expanding the ESLint configuration
+Fork and clone this repository to your local machine.
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+After moving into the cloned directory, run `npm i` to download the dependencies.
+
+Create a `.env` file in the root of the project and add the following:
+
+```plaintext
+VITE_BACK_END_SERVER_URL=http://localhost:3000
+```
+
+Start the app with `npm run dev`.
