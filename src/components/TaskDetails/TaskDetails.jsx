@@ -1,79 +1,55 @@
-import { useParams, Link } from "react-router";
+import { useParams } from "react-router";
 import { useState, useEffect, useContext } from 'react';
 import * as taskService from '../../services/taskService';
-import CommentForm from "../CommentForm/CommentForm";
-
 import { UserContext } from "../../contexts/UserContext";
-
-
 
 const TaskDetails = (props) => {
   const { taskId } = useParams();
   const { user } = useContext(UserContext);
 
-
   const [task, setTask] = useState(null);
-
-  
-  console.log('taskId', taskId);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchTask = async () => {
-      const taskData = await taskService.show(taskId);
-
-      setTask(taskData);
-    }
+      try {
+        const taskData = await taskService.show(taskId);
+        console.log('Task details fetched:', taskData); 
+        setTask(taskData);
+      } catch (error) {
+        console.error('Error fetching task details:', error.message);
+      } finally {
+        setLoading(false);
+      }
+    };
 
     fetchTask();
   }, [taskId]);
 
-  const handleAddComment = async (commentFormData) => {
-    const newComment = await taskService.createComment(taskId, commentFormData);
-    setTask({ ...task, comments: [...task.comments, newComment ]});
-  };
+  if (loading) return <main>Loading task details...</main>;
+  if (!task) return <main>No task found.</main>;
 
-  if (!task) return <main>Loading...</main>
-  
   return (
     <main>
       <section>
         <header>
-          <p>{task.category.toUpperCase()}</p>
-          <h1>{task.title}</h1>
+          <p>{task?.category ? task.category.toUpperCase() : 'No category available'}</p>
+          <h1>{task?.title || 'No title available'}</h1>
           <p>
-            {`${task.author.username} posted on
-            ${new Date(task.createdAt).toLocaleDateString()}`}
+            {task?.author?.username
+              ? `${task.author.username} posted on ${new Date(task.createdAt).toLocaleDateString()}`
+              : 'Author unknown'}
           </p>
-          { task.author._id === user._id && (
+          {task?.author?._id === user?._id && (
             <>
-              <Link to={`/tasks/${taskId}/edit`}>Edit</Link>
-
-              <button onClick={ () => props.handleDeleteTask(taskId) }>Delete</button>
+              <button onClick={() => props.handleDeleteTask(task._id)}>Delete</button>
             </>
           )}
         </header>
-        <p>{task.text}</p>
-      </section>
-      <section>
-      <h2>Comments</h2>
-      <CommentForm handleAddComment={handleAddComment} />
-
-        {!task.comments.length && <p>There are no comments.</p>}
-
-        {task.comments.map((comment) => (
-          <article key={comment._id}>
-            <header>
-              <p>
-                {`${comment.author.username} posted on
-                ${new Date(comment.createdAt).toLocaleDateString()}`}
-              </p>
-            </header>
-            <p>{comment.text}</p>
-          </article>
-        ))}
+        <p>{task?.text || 'No description available'}</p>
       </section>
     </main>
   );
-}
+};
 
 export default TaskDetails;

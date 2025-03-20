@@ -1,38 +1,49 @@
 import { useEffect, useState, useContext } from 'react';
-
 import { UserContext } from '../../contexts/UserContext';
+import * as taskService from '../../services/taskService';
+import '../components.css'; 
 
-import * as userService from '../../services/userService';
 
 const Dashboard = () => {
   const { user } = useContext(UserContext);
-  const [ users, setUsers ] = useState([]);
+  const [tasks, setTasks] = useState([]); 
 
   useEffect(() => {
-    const fetchUsers = async () => {
+    const fetchTasks = async () => {
       try {
-        const fetchedUsers = await userService.index();
-        setUsers(fetchedUsers);
+      
+        const fetchedTasks = await taskService.index(); 
+     
+        const userTasks = fetchedTasks.filter(task => task.author._id === user._id);
+     
+        setTasks(userTasks); 
       } catch (err) {
-        console.log(err)
+        console.error('Error fetching tasks:', err); 
       }
-    }
-    if (user) fetchUsers();
+    };
+
+    if (user) fetchTasks();
   }, [user]);
+
 
   return (
     <main>
+       <div className="component-container2">
       <h1>Welcome, {user.username}</h1>
-      <p>
-        This is the dashboard page where you can see a list of all the users.
-      </p>
+      <h2>
+        This is the dashboard page where you can see a list of all your tasks.
+      </h2>
       <ul>
-        {users.map(user => (
-          <li key={user._id}>{user.username}</li>
+        {tasks.map(task => (
+          <li key={task._id}>
+            <strong>{task.title}</strong> - {task.category}
+          </li>
         ))}
       </ul>
+      </div>
     </main>
   );
 };
 
 export default Dashboard;
+

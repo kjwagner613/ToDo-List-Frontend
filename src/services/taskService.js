@@ -5,11 +5,15 @@ const index = async () => {
     const res = await fetch(BASE_URL, {
       headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
     });
-    return res.json();
+    const data = await res.json();
+    console.log('Fetched tasks from backend:', data);
+    return data; // Send the data to the frontend
   } catch (error) {
-    console.log(error);
+    console.error('Error fetching tasks:', error);
+    throw error; // Ensure errors are surfaced
   }
 };
+
 
 const show = async (taskId) => {
   try {

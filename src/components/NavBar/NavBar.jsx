@@ -13,22 +13,24 @@ const NavBar = () => {
 
   return (
     <nav>
-      {user ? (
-        <ul>
-          <li>Welcome, {user.username}</li>
+    {user ? (
+      <>
+        <div className="welcome"></div>
+        <ul className="nav-links">
           <li><Link to='/'>Dashboard</Link></li>
           <li><Link to='/tasks/new'>New Task</Link></li>
+          <li><Link to="/tasks/update">Update Task</Link></li>
           <li><Link to='/' onClick={handleSignOut}>Sign Out</Link></li>
         </ul>
-      ) : (
-        <ul>
-          <li><Link to='/'>Home</Link></li>
-          <li><Link to='/sign-in'>Sign In</Link></li>
-          <li><Link to='/sign-up'>Sign Up</Link></li>
-     
-        </ul>
-      )}
-    </nav>
+      </>
+    ) : (
+      <ul className="nav-links">
+        <li><Link to='/'>Home</Link></li>
+        <li><Link to='/sign-in'>Sign In</Link></li>
+        <li><Link to='/sign-up'>Sign Up</Link></li>
+      </ul>
+    )}
+  </nav>
   );
 };
 
