@@ -3,6 +3,12 @@ body {
     justify-content: center;
     align-items: center;
 }
+.background-image {
+    background-image: url('./assets/ToDoBackground.webp');
+    background-size: cover;
+    height: 90vh;
+    width: 95vw;
+}
 
 .routeContainer {
    display:

@@ -1,7 +1,7 @@
 import { useParams, Link } from "react-router";
 import { useState, useEffect, useContext } from 'react';
 import * as taskService from '../../services/taskService';
-import CommentForm from "./CommentForm";
+import CommentForm from "../CommentForm/CommentForm";
 
 import { UserContext } from "../../contexts/UserContext";
 

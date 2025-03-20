@@ -1,0 +1,6 @@
+li {
+    display: inline-flex;
+    color: red;
+    list-style-type: none;
+    margin: 0 15px;
+}
