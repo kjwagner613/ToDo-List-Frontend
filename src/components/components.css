@@ -1,0 +1,29 @@
+.background-image {
+    background-image: url('../assets/ToDoBackground.webp');
+    background-size: cover;
+    height: 95vh;
+    width: 95vw;
+}
+h1 {
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    color: black;
+
+}
+
+h2 {
+    position: absolute;
+    top: 50%;
+    right: 15%;
+    color: black;
+    font-size: 40px;
+}
+
+p {
+    position: absolute;
+    top: 12%;
+    left: 15%;
+    color: black;
+    font-size: 23px;
+}

@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { Routes, Route } from 'react-router';
 import './App.css';
+import './components/components.css';
 
 import NavBar from './components/NavBar/NavBar';
 import SignUpForm from './components/SignUpForm/SignUpForm';
@@ -16,12 +17,12 @@ const App = () => {
   return (
     <>
       <NavBar/>
-      <h1>ToDo Task List</h1>
+      <div className="routeContainer">
       <Routes>
         <Route path='/' element={user ? <Dashboard /> : <Landing />} />
         <Route path='/sign-up' element={<SignUpForm />} />
         <Route path='/sign-in' element={<SignInForm />} />
-      </Routes>
+      </Routes></div>
     </>
   );
 };
