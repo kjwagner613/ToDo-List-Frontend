@@ -13,7 +13,7 @@ import TaskDetails from './components/TaskDetails/TaskDetails';
 import TaskEdit from './components/TaskEdit/TaskEdit';
 import TaskForm from './components/TaskForm/TaskForm';
 import TaskListUpdate from './components/TaskListUpdate/TaskListUpdate';
-
+import './index.css'
 
 
 import { UserContext } from './contexts/UserContext';
@@ -56,8 +56,7 @@ const App = () => {
       <>
         <NavBar />
         <Routes>
-          {/* Landing or Dashboard */}
-          <Route path="/" element={user ? <Dashboard /> : <Landing />} />
+             <Route path="/" element={user ? <Dashboard /> : <Landing />} />
           
           {/* Authenticated Routes */}
           {user ? (

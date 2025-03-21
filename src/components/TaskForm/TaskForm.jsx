@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
+import '../../index.css'; 
 
 import * as taskService from '../../services/taskService';
 
@@ -41,6 +42,7 @@ const TaskForm = (props) => {
 
   return (
     <main>
+       <div className="component-container">
       <h1>{ taskId ? 'Edit Task' : 'New Task' }</h1>
       <form onSubmit={handleSubmit}>
         <label htmlFor='title-input'>Title</label>
@@ -78,6 +80,7 @@ const TaskForm = (props) => {
         </select>
         <button type='submit'>SUBMIT</button>
       </form>
+      </div>
     </main>
   );
 };

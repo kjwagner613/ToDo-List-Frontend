@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router';
 import * as taskService from '../../services/taskService';
-import '../components.css'; 
+import '../../index.css'; 
 
 const TaskListUpdate = () => {
   const [tasks, setTasks] = useState([]);

@@ -1,44 +1,53 @@
 label {
-  font-size: 14px; /* Make label text readable */
+  font-size: 14px;  
 }
 
 button:hover {
-  background-color: #0056b3; /* Darken button on hover */
+  background-color: #0056b3; 
 }
 nav {
   position: absolute;
   top: 1%;
   display: flex;
-  flex-direction: column; /* Stack "Welcome" message above the links */
-  align-items: left; /* Center-align everything */
-  padding: 10px; /* Add some padding around the nav */
-  border-bottom: 1px solid #ccc; /* Subtle border at the bottom */
+  flex-direction: column;  
+  align-items: left; 
+  padding: 10px;  
+  border-bottom: 1px solid #ccc;  
 }
 
 nav ul {
-  display: flex; /* Arrange the list items horizontally */
-  gap: 20px; /* Add space between links */
-  list-style: none; /* Remove default bullet points */
-  padding: 0; /* Remove extra padding */
-  margin: 10px 0 0; /* Add a little space below "Welcome" */
+  display: flex; 
+  gap: 20px; 
+  list-style: none; 
+  padding: 0;g */
+  margin: 10px 0 0; 
 }
 
 nav li {
-  font-size: 16px; /* Make text readable */
+  font-size: 16px; 
 }
 
 nav li a {
-  text-decoration: none; /* Remove underline from links */
-  color: #007bff; /* Set link color to blue */
-  font-weight: bold; /* Make links bold */
+  text-decoration: none;
+  color: #007bff; 
+  font-weight: bold; 
 }
 
 nav li a:hover {
-  color: #0056b3; /* Darker blue on hover */
+  color: #0056b3;
 }
 
 nav .welcome {
-  font-size: 18px; /* Slightly larger font for the welcome message */
-  font-weight: bold; /* Make the message bold */
-  margin-bottom: 10px; /* Space between "Welcome" and the links */
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px; 
+}
+
+.nav-links {
+  background-color: #333; 
+  color: white; 
+  padding: 10px 15px; 
+  border-left: 5px solid #646cff; 
+  margin: 1em 0; 
+  border-radius: 4px;
 }

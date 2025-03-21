@@ -1,10 +1,9 @@
 .component-container {
-    display: flex;
-    flex-direction: column; /* Stack children vertically */
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* Center the container */
+    position: fixed;
+    top: 10%;
+    left: 20%;
+
+    
 }
 
 .component-container2 {

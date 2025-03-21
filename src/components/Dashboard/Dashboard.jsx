@@ -1,7 +1,7 @@
 import { useEffect, useState, useContext } from 'react';
 import { UserContext } from '../../contexts/UserContext';
 import * as taskService from '../../services/taskService';
-import '../components.css'; 
+import '../../index.css'; 
 
 
 const Dashboard = () => {
@@ -28,7 +28,7 @@ const Dashboard = () => {
 
   return (
     <main>
-       <div className="component-container2">
+       <div className="component-container">
       <h1>Welcome, {user.username}</h1>
       <h2>
         This is the dashboard page where you can see a list of all your tasks.
