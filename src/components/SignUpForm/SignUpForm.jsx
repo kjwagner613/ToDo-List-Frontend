@@ -1,9 +1,8 @@
 import { useState, useContext } from 'react';
 import { useNavigate } from 'react-router';
-
 import { signUp } from '../../services/authService';
-
 import { UserContext } from '../../contexts/UserContext';
+import '../SignInForm/SignIn.css';
 
 const SignUpForm = () => {
   const navigate = useNavigate();

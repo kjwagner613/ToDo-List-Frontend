@@ -1,0 +1,44 @@
+
+
+  h1 {
+    position: absolute;
+    background-color: #333; 
+    color: white; 
+    padding: 1vh 2vw; 
+    width: 10vw;
+    max-width: 700px;;
+    border-left: 5px solid #646cff;
+    margin: 1em 0; 
+    border-radius: 4px;
+    top: 15vh;
+  }
+
+  h2 {
+    position: absolute;
+    background-color: #333; 
+    color: white; 
+    padding: 1vh 2vw; 
+    width: 20vw;
+    max-width: 700px;;
+    border-left: 5px solid #646cff; 
+    margin: 1em 0; 
+    border-radius: 4px;
+    top: 40vh;
+    left: 27vw;
+  }
+
+  h3 {
+    font-size: 20px;
+    position: absolute;
+    background-color: #333; 
+    color: white; 
+    padding: 1vh 2vw; 
+    width: 30vw;
+    max-width: 700px;;
+    border-left: 5px solid #646cff;
+    margin: 1em 0; 
+    border-radius: 4px;
+    top: 60vh;
+    left: 21vw;
+    
+  }

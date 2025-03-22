@@ -1,51 +1,42 @@
 import { useEffect, useState, useContext } from 'react';
+import { Link } from 'react-router';
 import { UserContext } from '../../contexts/UserContext';
 import * as taskService from '../../services/taskService';
-import '../../index.css';
 
-
-const Dashboard = () => {
+const TaskSelect = () => {
   const { user } = useContext(UserContext);
   const [tasks, setTasks] = useState([]);
 
   useEffect(() => {
     const fetchTasks = async () => {
       try {
-
         const fetchedTasks = await taskService.index();
-
         const userTasks = fetchedTasks.filter(task => task.author._id === user._id);
-
         setTasks(userTasks);
       } catch (err) {
         console.error('Error fetching tasks:', err);
       }
     };
 
-    if (user) fetchTasks();
+    fetchTasks();
   }, [user]);
 
+  if (!tasks.length) {
+    return <main><p>No tasks found. Create one first!</p></main>;
+  }
 
   return (
     <main>
-      <div className="component-container">
-        <h1>Welcome, {user.username}</h1>
-        <h2>
-          Here are all your tasks.
-        </h2>
-        <ul>
-          {tasks.map(task => (
-            <li key={task._id}>
-
-              <strong>{task.title}</strong> - {task.category || 'No Category'}
-
-            </li>
-          ))}
-        </ul>
-      </div>
+      <h1>Select a Task to Update</h1>
+      <ul>
+        {tasks.map((task) => (
+          <li key={task._id}>
+            <Link to={`/tasks/${task._id}/edit`}>{task.title} - {task.category}</Link>
+          </li>
+        ))}
+      </ul>
     </main>
   );
 };
 
-export default Dashboard;
-
+export default TaskSelect;

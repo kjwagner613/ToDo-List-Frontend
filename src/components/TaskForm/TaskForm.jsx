@@ -1,13 +1,9 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
-import '../../index.css'; 
-
 import * as taskService from '../../services/taskService';
 
 const TaskForm = (props) => {
   const { taskId } = useParams();
-  console.log(taskId);
-
   const [formData, setFormData] = useState({
     title: '',
     text: '',
@@ -15,15 +11,17 @@ const TaskForm = (props) => {
   });
 
   useEffect(() => {
-    const fetchTask = async () => {
-      const taskData = await taskService.show(taskId);
-
-      setFormData(taskData);
-    };
-
-    if (taskId) fetchTask();
-
-    return () => setFormData({ title: '', text: '', category: 'Work' });
+    if (taskId) {
+      const fetchTask = async () => {
+        try {
+          const taskData = await taskService.show(taskId);
+          setFormData(taskData);
+        } catch (error) {
+          console.error('Error fetching task:', error);
+        }
+      };
+      fetchTask();
+    }
   }, [taskId]);
 
   const handleChange = (evt) => {
@@ -37,13 +35,11 @@ const TaskForm = (props) => {
     } else {
       props.handleAddTask(formData);
     }
-    
   };
 
   return (
     <main>
-       <div className="component-container">
-      <h1>{ taskId ? 'Edit Task' : 'New Task' }</h1>
+      <h1>{taskId ? 'Edit Task' : 'New Task'}</h1>
       <form onSubmit={handleSubmit}>
         <label htmlFor='title-input'>Title</label>
         <input
@@ -57,7 +53,6 @@ const TaskForm = (props) => {
         <label htmlFor='text-input'>Text</label>
         <textarea
           required
-          type='text'
           name='text'
           id='text-input'
           value={formData.text}
@@ -71,16 +66,15 @@ const TaskForm = (props) => {
           value={formData.category}
           onChange={handleChange}
         >
-          <option value='Home'>home</option>
+          <option value='Home'>Home</option>
           <option value='Work'>Work</option>
           <option value='Hobby'>Hobby</option>
           <option value='Personal'>Personal</option>
           <option value='Medical'>Medical</option>
           <option value='Entertainment'>Entertainment</option>
         </select>
-        <button type='submit'>SUBMIT</button>
+        <button type='submit'>Submit</button>
       </form>
-      </div>
     </main>
   );
 };
