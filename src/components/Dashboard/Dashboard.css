@@ -1,0 +1,65 @@
+h1 {
+    font-size: 1.4em;
+    position: fixed;
+    top: 0vh;
+    right: 1vw;
+    left: 70vw;
+    background-color: #333;
+    color: white;
+    padding: 4px 5px; /* Corrected padding */
+    border-left: 5px solid #646cff;
+    margin: 1em 0;
+    border-radius: 4px;
+    width: 25vw;
+    text-align: center;
+    z-index: 1005;
+  }
+  
+  h2 {
+    font-size: 1.5em;
+    position: fixed;
+    top: 2vh; 
+    left: 2vw;
+    background-color: #333;
+    color: white;
+    padding: 4px 5px; /* Corrected padding */
+    border-left: 5px solid #646cff;
+    margin: 3.5em 0;
+    border-radius: 4px;
+    width: 80vw;
+    text-align: center;
+    z-index: 1000;
+  }
+
+
+
+  /* .component-container {
+    position: relative;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;} */
+  
+  .task-grid {
+    position: relative;
+    top: 0; /* Adjusted top value */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Increased min-width to 250px */
+    gap: 30px; /* Increased gap to 30px */
+    margin: 20px;
+  }
+    
+  .task-item2 {
+     
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .task-title {
+    display: block;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }

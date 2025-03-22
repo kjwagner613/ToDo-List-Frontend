@@ -52,7 +52,7 @@ const TaskDetails = (props) => {
       <section>
         <header>
           <p>{task?.category?.toUpperCase() || 'No Category'}</p>
-          <h1>{task?.title || 'Untitled Task'}</h1>
+          <h2>{task?.title || 'Untitled Task'}</h2>
           <p>
             {task?.author?.username
               ? `${task.author.username} posted on ${new Date(task.createdAt).toLocaleDateString()}`

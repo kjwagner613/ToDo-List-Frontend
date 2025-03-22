@@ -48,27 +48,27 @@ const App = () => {
     setTasks(tasks.map((task) => (taskId === task._id ? updatedTask : task)));
     navigate(`/tasks/${taskId}`);
   };
-  
+
   return (
     <>
-      <NavBar/>
+      <NavBar />
       <Routes>
-  <Route path='/' element={user ? <Dashboard /> : <Landing />} />
-  {user ? (
-    <>
-      <Route path='/tasks' element={<TaskList tasks={tasks} />} />
-      <Route path='/tasks/update' element={<TaskSelect />} />
-      <Route path='/tasks/:taskId' element={<TaskDetails handleDeleteTask={handleDeleteTask} />} />
-      <Route path='/tasks/new' element={<TaskForm handleAddTask={handleAddTask} />} />
-      <Route path='/tasks/:taskId/edit' element={<TaskForm handleUpdateTask={handleUpdateTask} />} />
-    </>
-  ) : (
-    <>
-      <Route path='/sign-up' element={<SignUpForm />} />
-      <Route path='/sign-in' element={<SignInForm />} />
-    </>
-  )}
-</Routes>
+        <Route path='/' element={user ? <Dashboard /> : <Landing />} />
+        {user ? (
+          <>
+            <Route path='/tasks' element={<TaskList tasks={tasks} />} />
+            <Route path='/tasks/update' element={<TaskSelect />} />
+            <Route path='/tasks/:taskId' element={<TaskDetails handleDeleteTask={handleDeleteTask} />} />
+            <Route path='/tasks/new' element={<TaskForm handleAddTask={handleAddTask} />} />
+            <Route path='/tasks/:taskId/edit' element={<TaskForm handleUpdateTask={handleUpdateTask} />} />
+          </>
+        ) : (
+          <>
+            <Route path='/sign-up' element={<SignUpForm />} />
+            <Route path='/sign-in' element={<SignInForm />} />
+          </>
+        )}
+      </Routes>
     </>
   );
 };

@@ -1,3 +1,8 @@
+form {
+  margin-top: 5vh;
+  margin-bottom: 50vh;
+}
+
 h1 {
   font-size: 1.5em;
   position: absolute;
@@ -12,28 +17,75 @@ h1 {
   width: 25vw;
 
 }
+.SignIn-Form-Fields {
+  margin-top: 40vh;
+  margin-left: 30vw;
+}
 
-input#name {
-  width: 100%;
-  height: 45px;
-  padding: 10px;
+.SignIn-Form-Fields2 {
+  margin-top: 1vh;
+  margin-left: 30vw;
+  
+}
+
+label {
+  display: block;
+   
+}
+
+
+input#username {
+  width: 80%;
+  height: 16px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  padding: 10;
+  padding: 8px;
+}
+input#name {
+  width: 80%;
+  height: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 8px;
+
 }
 
 input#password {
-  width: 92%;
-  height: 20px;
-  padding: 10px;
+  width: 80%;
+  height: 16px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  padding: 8px;
 }
 
 input#confirm {
-  width: 92%;
-  height: 20px;
-  padding: 10px;
+  width: 80%;
+  height: 16px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  padding: 8px;
 }
+
+.CancelButton {
+ padding: 10px 15px;
+margin-left: 5vw;
+margin-top: 2vh;;
+}
+
+.SignInButton {
+  padding: 10px 15px;
+  margin-left: 40vw;
+  margin-top: 5vh;
+}
+
+.CancelButton2 {
+  padding: 20px 5px;
+  margin-left: 1vw;
+  margin-top: 2vh;
+ }
+    
+ .SignInButton2 {
+   margin-left: 40vw;
+   margin-top: 5vh;
+  font-size: 1.5em;
+ }

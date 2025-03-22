@@ -1,31 +1,21 @@
-import { Link } from "react-router";
-import './TaskList.css'
-const TaskList = (props) => {
+import React from 'react';
+import './TaskList.css';
+
+const TaskList = ({ tasks }) => {
   return (
-    <div>
-      <nav>
-        </nav>
-      <main><ul className="task-grid">
+    <><h1>Task List</h1><ul className="task-grid">
+      {tasks.map(task => (
+        <li key={task._id} className="task-item">
+          <div className="task-details">
+            <strong className="task-title">{task.title}</strong>
+            <span className="task-owner">Created By: <br></br>{task.author.username}</span>
+            <span className="task-date">{new Date(task.createdAt).toLocaleDateString()}</span>
+            <p className="task-text">{task.text}</p>
+          </div>
+        </li>
+      ))}
+    </ul></>
+  );
+};
 
-      {props.tasks.map((task) => (
-        <Link key={task._id} to={`/tasks/${task._id}`}>
-          <article>
-            <header>
-              <h2> <li class="task-item">{task.title}</li></h2>
-              <p>
-                <li class="task-item">{task.category || 'No Category'}</li>
-                <li class="task-item">
-                  {task.author.username} </li>
-                <li class="task-item">posted on</li>
-                <li class="task-item">{new Date(task.createdAt).toLocaleDateString()}</li>
-              </p>
-            </header>
-          </article>
-          </Link>
-      ))}</ul>
-      </main>
-    </div>
-  )
-}
-
-export default TaskList
+export default TaskList;

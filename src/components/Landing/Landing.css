@@ -1,7 +1,8 @@
-
+/* 
 
   h1 {
     position: absolute;
+    top: 77vh;
     background-color: #333; 
     color: white; 
     padding: 1vh 2vw; 
@@ -10,35 +11,46 @@
     border-left: 5px solid #646cff;
     margin: 1em 0; 
     border-radius: 4px;
-    top: 15vh;
-  }
+     } */
 
-  h2 {
-    position: absolute;
-    background-color: #333; 
-    color: white; 
-    padding: 1vh 2vw; 
-    width: 20vw;
-    max-width: 700px;;
-    border-left: 5px solid #646cff; 
-    margin: 1em 0; 
-    border-radius: 4px;
-    top: 40vh;
-    left: 27vw;
+
+  .todo {
+color: red;
+position: fixed;
+top: 25vh;
+left: 20vw;
+width: 60vw;
+transform: translate(-20%, -80%);
+text-align: left;
+text-indent: 2vw;
   }
 
   h3 {
+    position: absolute;  
+    top: 29vh;
+    background-color: #333; 
+    color: white; 
+    padding: 1.5vh 2vw; 
+    width: 60vw;
+    max-width: 700px;
+    border-left: 5px solid #646cff; 
+    margin: 1em 0; 
+    border-radius: 4px;
+    left: 27vw;
+  }
+
+  h4 {
     font-size: 20px;
     position: absolute;
     background-color: #333; 
     color: white; 
     padding: 1vh 2vw; 
-    width: 30vw;
+    width: 40vw;
     max-width: 700px;;
     border-left: 5px solid #646cff;
     margin: 1em 0; 
     border-radius: 4px;
-    top: 60vh;
-    left: 21vw;
+    top: 40vh;
+    left: 41vw;
     
   }

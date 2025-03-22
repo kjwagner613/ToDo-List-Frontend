@@ -1,8 +1,7 @@
 import { useEffect, useState, useContext } from 'react';
 import { UserContext } from '../../contexts/UserContext';
 import * as taskService from '../../services/taskService';
-import '../../index.css';
-
+import './Dashboard.css';
 
 const Dashboard = () => {
   const { user } = useContext(UserContext);
@@ -11,11 +10,8 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchTasks = async () => {
       try {
-
         const fetchedTasks = await taskService.index();
-
         const userTasks = fetchedTasks.filter(task => task.author._id === user._id);
-
         setTasks(userTasks);
       } catch (err) {
         console.error('Error fetching tasks:', err);
@@ -25,20 +21,16 @@ const Dashboard = () => {
     if (user) fetchTasks();
   }, [user]);
 
-
   return (
-    <main>
+    <main  className="dashboard-container">
+      <h1>Welcome, {user.username}</h1>
+      <h2>Here are all your tasks.</h2>
       <div className="component-container">
-        <h1>Welcome, {user.username}</h1>
-        <h2>
-          Here are all your tasks.
-        </h2>
-        <ul>
+        <ul className="task-grid">
           {tasks.map(task => (
-            <li key={task._id}>
-
-              <strong>{task.title}</strong> - {task.category || 'No Category'}
-
+            <li key={task._id} className="task-item2">
+              <strong className="task-title">{task.title}</strong>
+              <span className="task-category">{task.category || 'No Category'}</span>
             </li>
           ))}
         </ul>
@@ -48,4 +40,3 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
-

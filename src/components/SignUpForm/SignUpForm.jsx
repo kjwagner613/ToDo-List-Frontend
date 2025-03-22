@@ -41,7 +41,7 @@ const SignUpForm = () => {
       <h1>Sign Up</h1>
       <p>{message}</p>
       <form onSubmit={handleSubmit}>
-        <div>
+      <div className='SignIn-Form-Fields'>
           <label htmlFor='username'>Username:</label>
           <input
             type='text'
@@ -52,7 +52,7 @@ const SignUpForm = () => {
             required
           />
         </div>
-        <div>
+        <div className='SignIn-Form-Fields2'>
           <label htmlFor='password'>Password:</label>
           <input
             type='password'
@@ -63,7 +63,7 @@ const SignUpForm = () => {
             required
           />
         </div>
-        <div>
+        <div className='SignIn-Form-Fields2'>
           <label htmlFor='confirm'>Confirm Password:</label>
           <input
             type='password'
@@ -75,8 +75,8 @@ const SignUpForm = () => {
           />
         </div>
         <div>
-          <button disabled={isFormInvalid()}>Sign Up</button>
-          <button onClick={() => navigate('/')}>Cancel</button>
+          <span className="SignInButton2"><button disabled={isFormInvalid()}>Sign Up</button></span>
+          <span className="CancelButton2"><button onClick={() => navigate('/')}>Cancel</button></span>
         </div>
       </form>
     </main>

@@ -34,7 +34,7 @@ const SignInForm = () => {
       <h1>Sign In</h1>
       <p>{message}</p>
       <form autoComplete='off' onSubmit={handleSubmit}>
-        <div>
+        <div className='SignIn-Form-Fields'>
           <label htmlFor='email'>Username:</label>
           <input
             type='text'
@@ -46,7 +46,7 @@ const SignInForm = () => {
             required
           />
         </div>
-        <div>
+        <div className='SignIn-Form-Fields2'>
           <label htmlFor='password'>Password:</label>
           <input
             type='password'
@@ -59,8 +59,8 @@ const SignInForm = () => {
           />
         </div>
         <div>
-          <button>Sign In</button>
-          <button onClick={() => navigate('/')}>Cancel</button>
+          <button className='SignInButton'>Sign In</button>
+          <button className='CancelButton' onClick={() => navigate('/')}>Cancel</button>
         </div>
       </form>
     </main>

@@ -1,26 +1,28 @@
-label {
+/* label {
   font-size: 14px;  
-}
+} */
 
 button:hover {
   background-color: #0056b3; 
 }
+
 nav {
   position: absolute;
   top: 1%;
   display: flex;
-  flex-direction: column;  
-  align-items: left; 
+  flex-direction: row;  
+  align-items: flex-start;  
   padding: 10px;  
   border-bottom: 1px solid #ccc;  
 }
-
+/*
 nav ul {
   display: flex; 
   gap: 20px; 
   list-style: none; 
-  padding: 0;g */
+  padding: 0;
   margin: 10px 0 0; 
+  z-index: 1000;
 }
 
 nav li {
@@ -43,11 +45,16 @@ nav .welcome {
   margin-bottom: 10px; 
 }
 
+*/
+
 .nav-links {
+  display: flex;
+  flex-direction: row;
   background-color: #333; 
   color: white; 
   padding: 10px 15px; 
   border-left: 5px solid #646cff; 
   margin: 1em 0; 
   border-radius: 4px;
+  gap: 20px;
 }
