@@ -1,0 +1,60 @@
+.tform-app-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.taskFormContainer {
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* Two columns: 1fr for labels, 2fr for inputs */
+  gap: 20px; /* Space between grid items */
+  width: 80%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #3B82F6;
+  border-radius: 8px;
+  background-color: #121212;
+  color: #E0E0E0;
+}
+
+.taskFormStyle {
+  display: contents; /* Use contents to allow grid items to be direct children */
+}
+
+.taskFormStyle label {
+  font-weight: bold;
+  align-self: center; /* Center labels vertically */
+}
+
+.taskFormStyle input,
+.taskFormStyle textarea,
+.taskFormStyle select {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  font-size: 1em;
+  width: 100%; /* Ensure inputs take full width of the grid column */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.taskFormStyle textarea {
+  resize: none;
+}
+
+.taskFormStyle button {
+  grid-column: 1 / span 2; /* Span both columns */
+  padding: 10px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  justify-self: center; /* Center the button horizontally */
+}
+
+.taskFormStyle button:hover {
+  background-color: #555;
+}

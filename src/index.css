@@ -1,11 +1,1 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 2;
-  font-weight: 400;
-  width: 80vw;
-  max-width: 800px;
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #193b4e;
-
-}
+background-color: #193b4e;

@@ -14,6 +14,7 @@ import TaskForm from './components/TaskForm/TaskForm';
 import TaskSelect from './components/TaskSelect/TaskSelect';
 
 import { UserContext } from './contexts/UserContext';
+import './App.css';
 
 const App = () => {
   const [tasks, setTasks] = useState([]);
@@ -50,8 +51,10 @@ const App = () => {
   };
 
   return (
+   
     <>
       <NavBar />
+    
       <Routes>
         <Route path='/' element={user ? <Dashboard /> : <Landing />} />
         {user ? (
@@ -69,8 +72,8 @@ const App = () => {
           </>
         )}
       </Routes>
-    </>
-  );
+         </>
+           );
 };
 
 export default App;

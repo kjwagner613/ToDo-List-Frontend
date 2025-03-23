@@ -22,20 +22,20 @@ const Dashboard = () => {
   }, [user]);
 
   return (
-    <main  className="dashboard-container">
-      <h1>Welcome, {user.username}</h1>
-      <h2>Here are all your tasks.</h2>
-      <div className="component-container">
-        <ul className="task-grid">
+    <div className="dashboard-container">
+    <main>  
+      <h1 className="dashboardh1">Welcome, {user.username}</h1>
+       <h2 className="dashboardh2">Here are your tasks.</h2>
+         <ul className="task-grid">
           {tasks.map(task => (
             <li key={task._id} className="task-item2">
-              <strong className="task-title">{task.title}</strong>
-              <span className="task-category">{task.category || 'No Category'}</span>
+              <strong className="task-title">Title: {task.title}</strong>
+              <span className="task-category"> Category: {task.category || 'No Category'}</span>
             </li>
           ))}
         </ul>
-      </div>
-    </main>
+      </main>
+    </div>
   );
 };
 

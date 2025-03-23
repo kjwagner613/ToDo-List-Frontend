@@ -4,13 +4,13 @@
   gap: 20px;
   list-style: none;
   padding: 0;
-  margin-top: 20vh;
+  margin-top: 25vh;
   max-width: 800px;
 }
 
 .task-item {
-  background-color: #352e2e; 
-  border: 1px solid #ccc; 
+  background-color: #0a2a1f; 
+  border: 1px solid #3B82F6; 
   border-radius: 8px;
   padding: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -30,10 +30,19 @@
   margin-bottom: 5px;
 }
 
+.taskListh1 {
+position: fixed;
+margin-top: -15vh;
+font-size: 40px;
+color: #E0E0E0;
+max-width: 800px;
+left: 43vw;
+}
+
 .task-owner,
 .task-date,
 .task-text {
-  margin-bottom: 5px;
+  margin-bottom: 2px;
 }
 
 nav {
@@ -42,5 +51,5 @@ nav {
   top: -2%;
   left: -2%;
   align-items: center;
-  padding: 0 20px;
+  padding: 0 10px;
 }

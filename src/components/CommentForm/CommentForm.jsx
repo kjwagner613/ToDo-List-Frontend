@@ -1,33 +1,31 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
+import './CommentForm.css';
 
-const CommentForm = (props) => {
+const CommentForm = ({ handleAddComment }) => {
   const [formData, setFormData] = useState({ text: '' });
 
-  const handleChange = (evt) => {
-    setFormData({ ...formData, [evt.target.name]: evt.target.value });
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (evt) => {
-    evt.preventDefault();
-    props.handleAddComment(formData);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    handleAddComment(formData);
     setFormData({ text: '' });
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label htmlFor='text-input'>Your comment:</label>
+    <form className="comment-form" onSubmit={handleSubmit}>
       <textarea
         required
-        type='text'
-        name='text'
-        id='text-input'
+        name="text"
+        id="text-input"
         value={formData.text}
         onChange={handleChange}
       />
-      <button type='submit'>SUBMIT COMMENT</button>
+      <button type="submit">Submit</button>
     </form>
   );
 };
 
 export default CommentForm;
-

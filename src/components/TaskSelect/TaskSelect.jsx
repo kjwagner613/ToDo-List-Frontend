@@ -2,6 +2,7 @@ import { useEffect, useState, useContext } from 'react';
 import { Link } from 'react-router';
 import { UserContext } from '../../contexts/UserContext';
 import * as taskService from '../../services/taskService';
+import './TaskSelect.css';
 
 const TaskSelect = () => {
   const { user } = useContext(UserContext);
@@ -27,14 +28,16 @@ const TaskSelect = () => {
 
   return (
     <main>
-      <h1>Select a Task to Update</h1>
-      <ul>
-        {tasks.map((task) => (
-          <li key={task._id}>
-            <Link to={`/tasks/${task._id}/edit`}>{task.title} - {task.category}</Link>
-          </li>
-        ))}
-      </ul>
+      <div className="selectForm-container">
+        <h1 className="select-h1">Select a Task to Update</h1>
+        <ul className="select-grid">
+          {tasks.map((task) => (
+            <li key={task._id} className='select-grid-item'>
+              <Link to={`/tasks/${task._id}`}>{task.title} - {task.category}</Link>
+            </li>
+          ))}
+        </ul>
+      </div>
     </main>
   );
 };
