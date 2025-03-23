@@ -1,91 +1,101 @@
-/* form {
-  margin-top: 5vh;
-  margin-bottom: 50vh;
+
+
+.appcontainerSignIn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
 }
 
-h1 {
-  font-size: 1.5em;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+.signInFormContainer {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+  width: 80%;
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: 20%;
+  padding: 20px;
+  border: 1px solid #3b82f6;
+  border-radius: 8px;
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+.signInFormStyle {
+  display: contents;
+}
+
+.signInFormStyle label {
+  font-weight: bold;
+  align-self: center;
+}
+
+.signInFormStyle textarea {
+  resize: none;
+}
+
+.signInStyle button {
+  grid-column: 1 / span 2;
+  padding: 10px;
   background-color: #333;
   color: white;
-  padding: 2px 15px;
-  border-left: 5px solid #646cff;
-  margin: 1em 0;
+  border: none;
   border-radius: 4px;
-  width: 25vw;
-
+  cursor: pointer;
+  justify-self: center;
 }
+
+.signIntyle button:hover {
+  background-color: #555;
+}
+
+.signInh1 {
+  color: red;
+  margin-left: 25%;
+  margin-top: 15%;
+}
+
 .SignIn-Form-Fields {
-  margin-top: 40vh;
-  margin-left: 30vw;
+  color: red;
+  padding: 10px;
 }
 
 .SignIn-Form-Fields2 {
-  margin-top: 1vh;
-  margin-left: 30vw;
+  color: red;
+  padding: 10px;
+}
+.signInLabel {
+  color: red;
+  font-size: 1.2em;
+  padding: 10px;
+  margin-bottom: 5pz;
+}
+
+.signInLabel2 {
+  color: red;
+  font-size: 1.2em;
+  padding: 10px;
+  margin-bottom: 5pz;
+}
+
+.SignInButton,
+.CancelButton {
+  grid-column: 2 / span 2;
+  padding: 10px;
+  background-color:#0a2a1f;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  justify-self: center;
+  border-color: #3B82F6;
+  border-width: 1px; /* Adjust the width to your preference */
+  border-style: solid; /* Choose the border style (e.g., solid, dashed, dotted) */
   
 }
 
-label {
-  display: block;
-   
-}
-
-
-input#username {
-  width: 80%;
-  height: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  padding: 8px;
-}
-input#name {
-  width: 80%;
-  height: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  padding: 8px;
-
-}
-
-input#password {
-  width: 80%;
-  height: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  padding: 8px;
-}
-
-input#confirm {
-  width: 80%;
-  height: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  padding: 8px;
-}
-
-.CancelButton {
- padding: 10px 15px;
-margin-left: 5vw;
-margin-top: 2vh;;
-}
-
 .SignInButton {
-  padding: 10px 15px;
-  margin-left: 40vw;
-  margin-top: 5vh;
+  margin-right: 4px;
 }
-
-.CancelButton2 {
-  padding: 20px 5px;
-  margin-left: 1vw;
-  margin-top: 2vh;
- }
-    
- .SignInButton2 {
-   margin-left: 40vw;
-   margin-top: 5vh;
-  font-size: 1.5em;
- } */
