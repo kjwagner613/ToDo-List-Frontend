@@ -38,10 +38,12 @@ const SignUpForm = () => {
 
   return (
     <main>
-      <h1>Sign Up</h1>
-      <p>{message}</p>
+       <div className="appcontainerSignIn">
+       <p>{message}</p>
+      <div className="signInFormContainer">
+      <h1 className="signInh1">Sign Up</h1>
       <form onSubmit={handleSubmit}>
-      <div className='SignIn-Form-Fields'>
+      <div className='SignIn-Form-Fields2'>
           <label htmlFor='username'>Username:</label>
           <input
             type='text'
@@ -75,10 +77,11 @@ const SignUpForm = () => {
           />
         </div>
         <div>
-          <span className="SignInButton2"><button disabled={isFormInvalid()}>Sign Up</button></span>
+          <span className="SignUpButton"><button disabled={isFormInvalid()}>Sign Up</button></span>
           <span className="CancelButton2"><button onClick={() => navigate('/')}>Cancel</button></span>
         </div>
       </form>
+      </div></div>
     </main>
   );
 };

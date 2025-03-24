@@ -21,22 +21,40 @@ const TaskList = () => {
     if (user) fetchTasks();
   }, [user]);
 
+  const categorizeTasks = (tasks) => {
+    return tasks.reduce((categories, task) => {
+      const category = task.category || 'Uncategorized';
+      if (!categories[category]) {
+        categories[category] = [];
+      }
+      categories[category].push(task);
+      return categories;
+    }, {});
+  };
+
+  const categorizedTasks = categorizeTasks(tasks);
+
   return (
     <div className="task-list-container">
       <h1 className="taskListh1">Task List</h1>
       <div className="task-list-content">
-        <ul className="task-grid">
-          {tasks.map(task => (
-            <li key={task._id} className="task-item">
-              <div className="task-details">
-                <strong className="task-title">{task.title}</strong>
-                <span className="task-owner">Created By: <br></br>{task.author.username}</span>
-                <span className="task-date">{new Date(task.createdAt).toLocaleDateString()}</span>
-                <p className="task-text">{task.text}</p>
-              </div>
-            </li>
-          ))}
-        </ul>
+        {Object.keys(categorizedTasks).map(category => (
+          <div key={category} className="task-category">
+            <h2 className="task-category-title">{category}</h2>
+            <ul className="task-grid">
+              {categorizedTasks[category].map(task => (
+                <li key={task._id} className="task-item">
+                  <div className="task-details">
+                    <strong className="task-title">{task.title}</strong>
+                    <span className="task-owner">Created By: <br></br>{task.author.username}</span>
+                    <span className="task-date">{new Date(task.createdAt).toLocaleDateString()}</span>
+                    <p className="task-text">{task.text}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
     </div>
   );

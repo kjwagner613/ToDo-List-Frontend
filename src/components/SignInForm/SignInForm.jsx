@@ -59,8 +59,8 @@ const SignInForm = () => {
               required />
           </div>
           <div>
-            <button className='SignInButton'>Sign In</button>
-            <button className='CancelButton' onClick={() => navigate('/')}>Cancel</button>
+           <span className="SignInButton"> <button >Sign In</button></span>
+           <span className="CancelButton"><button  onClick={() => navigate('/')}>Cancel</button></span>
           </div>
             </form>
           </div>

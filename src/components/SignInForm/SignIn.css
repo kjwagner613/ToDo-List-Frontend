@@ -1,4 +1,8 @@
-
+.signInh1 {
+  color: red;
+  margin-left: 25%;
+  margin-top: 15%;
+}
 
 .appcontainerSignIn {
   display: flex;
@@ -13,7 +17,7 @@
   grid-template-columns: 1fr 2fr;
   gap: 20px;
   width: 80%;
-  max-width: 800px;
+  max-width: 500px;
   margin: 0 auto;
   margin-top: 20%;
   padding: 20px;
@@ -25,6 +29,7 @@
 
 .signInFormStyle {
   display: contents;
+  margin-bottom: 10px;
 }
 
 .signInFormStyle label {
@@ -51,11 +56,7 @@
   background-color: #555;
 }
 
-.signInh1 {
-  color: red;
-  margin-left: 25%;
-  margin-top: 15%;
-}
+
 
 .SignIn-Form-Fields {
   color: red;
@@ -65,6 +66,13 @@
 .SignIn-Form-Fields2 {
   color: red;
   padding: 10px;
+  margin-bottom: 10px;;
+}
+.signInLabel {
+  color: red;
+  font-size: 1.2em;
+  padding: 10px;
+  margin-bottom: 5pz;
 }
 .signInLabel {
   color: red;
@@ -77,13 +85,16 @@
   color: red;
   font-size: 1.2em;
   padding: 10px;
-  margin-bottom: 5pz;
 }
 
 .SignInButton,
-.CancelButton {
+.CancelButton,
+.CancelButton2,
+.SignUpButton {
   grid-column: 2 / span 2;
   padding: 10px;
+  gap: 20px;
+  margin: 5px;
   background-color:#0a2a1f;
   color: white;
   border: none;

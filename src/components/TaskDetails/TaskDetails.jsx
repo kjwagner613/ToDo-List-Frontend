@@ -49,48 +49,52 @@ const TaskDetails = (props) => {
   }
 
   return (
-    <main><div className="taskDetail-appContainer">
-      <h1 className="taskDetailh1">TASK DETAILS</h1>
-      <section className="task-details-section">
-        <header>
-          <p>Category: {task?.category?.toUpperCase() || 'No Category'}</p>
-          <h2 className="taskDetailh2">{task?.title || 'Untitled Task'}</h2>
-          <p>
-            Created By: {task?.author?.username
-              ? `${task.author.username} on ${new Date(task.createdAt).toLocaleDateString()}`
-              : 'Author unknown'}
-          </p>
-          {task?.author?._id === user?._id && (
-            <>
-              <Link to={`/tasks/${taskId}/edit`}>Edit</Link>
-              <button onClick={() => props.handleDeleteTask(taskId)}>Delete</button>
-            </>
-          )}
-          <p>{task?.text || 'No details available for this task.'}</p>
-        </header>
-      </section>
+    <main>
+      <div className="taskDetail-appContainer">
+        <h1 className="taskDetailh1">TASK DETAILS</h1>
+        <section className="task-details-section">
+          <header>
+            <p>Category: {task?.category?.toUpperCase() || 'No Category'}</p>
+            <h2 className="taskDetailh2">{task?.title || 'Untitled Task'}</h2>
+            <p>
+              Created By: {task?.author?.username
+                ? `${task.author.username} on ${new Date(task.createdAt).toLocaleDateString()}`
+                : 'Author unknown'}
+            </p>
+            {task?.author?._id === user?._id && (
+              <>
+                <Link to={`/tasks/${taskId}/edit`}>
+                  <button className="taskDetailEditButton">Edit</button>
+                </Link>
+                <button onClick={() => props.handleDeleteTask(taskId)}>Delete</button>
+              </>
+            )}
+            <p>{task?.text || 'No details available for this task.'}</p>
+          </header>
+        </section>
 
-      <section className="comment-section">
-        <CommentForm handleAddComment={handleAddComment} />
-        <div className="comment-grid">
-          {(!task?.comments || task.comments.length === 0) ? (
-            <p>There are no comments yet.</p>
-          ) : (
-            task.comments.map((comment) => (
-              <article key={comment._id} className="comment-article">
-                <header>
-                  <p>
-                    {comment?.author?.username
-                      ? `${comment.author.username} commented on ${new Date(comment.createdAt).toLocaleDateString()}`
-                      : 'Unknown commenter'}
-                  </p>
-                  <p>{comment?.text || 'No text available'}</p>
-                </header>
-              </article>
-            ))
-          )}
-        </div>
-      </section></div>
+        <section className="comment-section">
+          <CommentForm handleAddComment={handleAddComment} />
+          <div className="comment-grid">
+            {(!task?.comments || task.comments.length === 0) ? (
+              <p>There are no comments yet.</p>
+            ) : (
+              task.comments.map((comment) => (
+                <article key={comment._id} className="comment-article">
+                  <header>
+                    <p>
+                      {comment?.author?.username
+                        ? `${comment.author.username} commented on ${new Date(comment.createdAt).toLocaleDateString()}`
+                        : 'Unknown commenter'}
+                    </p>
+                    <p>{comment?.text || 'No text available'}</p>
+                  </header>
+                </article>
+              ))
+            )}
+          </div>
+        </section>
+      </div>
     </main>
   );
 }

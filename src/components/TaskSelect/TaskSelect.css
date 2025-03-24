@@ -9,9 +9,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid #3B82F6;
+  border: 1px solid #3B82F6; /* Electric Blue */
   padding: 10px;
   border-radius: 5px;
+  background-color: #121212; /* Deep Navy */
+  color: #E0E0E0; /* Light Gray */
 }
 
 .select-h1 {
@@ -21,9 +23,10 @@
   flex-direction: row;
   align-items: flex-start;
   padding: 10px;
-  border-bottom: 1px solid #3B82F6;
+  border-bottom: 1px solid #3B82F6; /* Electric Blue */
+  color: #E0E0E0; /* Light Gray */
 }
 
 .selectForm-container {
-  color: #E0E0E0;
+  color: #E0E0E0; /* Light Gray */
 }

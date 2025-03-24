@@ -1,5 +1,7 @@
 .tform-app-container {
   display: flex;
+  position: absolute;
+  top: 15%;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -11,7 +13,7 @@
   grid-template-columns: 1fr 2fr; /* Two columns: 1fr for labels, 2fr for inputs */
   gap: 20px; /* Space between grid items */
   width: 80%;
-  max-width: 800px;
+  min-width: 500px;
   margin: 0 auto;
   padding: 20px;
   border: 1px solid #3B82F6;
