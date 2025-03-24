@@ -1,16 +1,22 @@
 .task-list-container {
-position: relative;
-right: 32%;
-
+  position: absolute;
+  align-self: center;
+  transform:translate(-50%, -50%);
+  align-self: center;
+  top: 115%;
+  left: 30%;
+  margin-left: 50px;
+  width: 900px; /* Set the width of the container */
 }
 
 .task-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr); /* Four equal columns */
+  gap: 20px; /* Space between grid items */
   list-style: none;
   padding: 0;
   margin-top: 2%;
- 
+  
 }
 
 .task-item {
@@ -20,14 +26,13 @@ right: 32%;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   text-align: center;
   color: #E0E0E0;
-  max-width: 285px;
+  max-width: 100%; /* Ensure items take full width of the grid column */
 }
 
 .task-details {
   display: flex;
   flex-direction: column;
   align-items: center;
-  
 }
 
 .task-title {
@@ -39,11 +44,14 @@ right: 32%;
 
 .taskListh1 {
   position: fixed;
-  margin-top: -15vh;
+  top: 5%;
+  align-self: center;
+  transform:translate(-50%, -50%);
+  left: 75%;
   font-size: 40px;
   color: #E0E0E0;
-  max-width: 800px;
-  left: 43vw;
+  z-index: 1000;
+  
 }
 
 .task-owner,
@@ -56,8 +64,8 @@ right: 32%;
 nav {
   margin-bottom: 20px;
   position: fixed;
-  top: -2%;
-  left: -2%;
+  top: 0;
+  left: 0;
   align-items: center;
   padding: 0 10px;
   color: #E0E0E0;
@@ -74,6 +82,5 @@ nav {
 }
 
 .task-list-content {
-margin-top: 20%;
-
+  margin-top: 20%;
 }
