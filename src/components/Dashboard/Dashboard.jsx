@@ -31,7 +31,7 @@ const Dashboard = () => {
     const categoryCounts = {};
     const oldTasksCounts = {};
     const thirtyDaysAgo = new Date();
-    thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
+    thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 5);
 
     tasks.forEach(task => {
       const category = task.category || 'Uncategorized';
@@ -76,12 +76,12 @@ const Dashboard = () => {
               </li>
             ))}
           </ul>
-          <h4 className="dashboardh4">Tasks Older Than 30 Days by Category:</h4>
+          <h4 className="dashboardh4">Tasks Older Than 5 Days by Category:</h4>
           <ul>
             {Object.keys(stats.oldTasksCounts).map(category => (
-              <li key={category}>
+             <span className="oldTasksStats"> <li key={category}>
                 {category}: {stats.oldTasksCounts[category]}
-              </li>
+              </li></span>
             ))}
           </ul></div></div>
         </div>

@@ -55,7 +55,7 @@ const TaskDetails = (props) => {
         <section className="task-details-section">
           <header>
             <p>Category: {task?.category?.toUpperCase() || 'No Category'}</p>
-            <h2 className="taskDetailh2">{task?.title || 'Untitled Task'}</h2>
+            <h2 className="taskDetailh2">Title: {task?.title || 'Untitled Task'}</h2>
             <p>
               Created By: {task?.author?.username
                 ? `${task.author.username} on ${new Date(task.createdAt).toLocaleDateString()}`
@@ -64,9 +64,9 @@ const TaskDetails = (props) => {
             {task?.author?._id === user?._id && (
               <>
                 <Link to={`/tasks/${taskId}/edit`}>
-                  <button className="taskDetailEditButton">Edit</button>
+                 <span  className="taskDetailEditButton"> <button>Edit</button></span>
                 </Link>
-                <button onClick={() => props.handleDeleteTask(taskId)}>Delete</button>
+                <span className="taskDetailDeleteButton"><button  onClick={() => props.handleDeleteTask(taskId)}>Delete</button></span>
               </>
             )}
             <p>{task?.text || 'No details available for this task.'}</p>

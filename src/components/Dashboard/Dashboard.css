@@ -6,18 +6,19 @@ body {
 }
 
 .task-stats {
-
-
-font-size: 1.2em;
-;
-
+  font-size: 1em;
+  position: relative;
+  top: 8%;
 }
 
+.oldTasksStats {
+  position: relative;
+  top: 0; /* Added missing value */
+}
 
 .dashboard-container {
   display: flex;
   flex-direction: column;
-
   max-width: 800px;
   margin: 0 auto;
   margin-top: 10px;
@@ -25,7 +26,6 @@ font-size: 1.2em;
   position: absolute;
   top: 15%;
   left: 15%;
-
 }
 
 .dashboardh1 {
@@ -34,7 +34,7 @@ font-size: 1.2em;
   text-decoration: underline;
   text-decoration-thickness: 2px;
   text-underline-offset: 5px;
-  top: 4vh;
+  top: 5vh;
   left: 11%;
   font-style: oblique;
   color: #3B82F6; /* Electric Blue */
@@ -63,24 +63,21 @@ font-size: 1.2em;
 }
 
 .dashboardh3 {
-position: relative;
-left: -5%;
-top: 25%;
-
+  position: relative;
+  left: -5%;
+  top: 25%;
 }
 
 .dashboardh4 {
   position: relative;
   left: -5%;
   top: 25%;
-  
-  }
+}
 
 .listByCategory {
-display: flex;
-flex-direction: column;
-position: relative;
-
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 
 .task-grid {
@@ -95,9 +92,8 @@ position: relative;
 
 .statsList {
   position: relative;
-  top: 0%;
+  top: -5%;
 }
-
 
 .task-item2 {
   border: 2px solid #3B82F6; /* Electric Blue */
@@ -124,5 +120,4 @@ position: relative;
     top: 8vh;
     left: 10%;  
   }
- 
 }
