@@ -12,12 +12,15 @@ const TaskList = () => {
     const fetchTasks = async () => {
       try {
         const fetchedTasks = await taskService.index();
-        const userTasks = fetchedTasks.filter(task => task.author._id === user._id);
+        const userTasks = fetchedTasks.filter(
+          (task) => task.author && task.author._id === user._id // Check if `author` exists
+        );
         setTasks(userTasks);
       } catch (err) {
         console.error('Error fetching tasks:', err);
       }
     };
+  
     if (user) fetchTasks();
   }, [user]);
 

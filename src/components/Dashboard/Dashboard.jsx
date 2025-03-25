@@ -16,7 +16,9 @@ const Dashboard = () => {
     const fetchTasks = async () => {
       try {
         const fetchedTasks = await taskService.index();
-        const userTasks = fetchedTasks.filter(task => task.author._id === user._id);
+        const userTasks = fetchedTasks.filter(
+          (task) => task.author && task.author._id === user._id
+        );
         setTasks(userTasks);
         calculateStats(userTasks);
       } catch (err) {

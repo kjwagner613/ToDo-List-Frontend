@@ -1,72 +1,70 @@
 body {
-  background-color: #121212; /* Deep Navy */
-  color: #E0E0E0; /* Light Gray */
+  background-color: #121212;
+  color: #e0e0e0;
   max-width: 900px;
-  margin: 0 auto; 
+ 
 }
 
-
 .statsList {
-  grid-column: span 1; /* Occupies one column */
-  border: 1px solid #3B82F6; /* Electric Blue border */
+  grid-column: span 1;
+  border: 1px solid #3b82f6;
   padding: 10px;
 }
 
-
 .oldTasksStats {
   position: relative;
-  top: 0; /* Added missing value */
+  top: 0;
 }
 .dashboard-container {
+  position: relative;
+  left: 1vw;
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 columns */
-  grid-template-rows: auto; /* Rows adjust dynamically to content */
-  gap: 20px; /* Adds spacing between grid items */
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  gap: 20px;
   max-width: 900px;
   padding: 20px;
-  background-color: #121212; /* Deep Navy */
- 
+  background-color: #121212;
   margin: 0 auto;
   margin-top: 4%;
-  margin-left: -15%;
 }
 .task-stats {
-  grid-column: span 2; /* Span across both columns */
+  grid-column: span 2;
   display: grid;
   gap: 10px;
 }
 
 .listByCategory {
-  grid-column: span 1; /* Occupies one column */
+  grid-column: span 1;
+  margin-top: 55px;
 }
-
 
 .dashboardh1 {
   font-size: 1.9em;
-  margin-left: 1%;
-  margin-top: 3%;
+  position: relative;
+  left: 65vh;
   text-decoration: underline;
   text-decoration-thickness: 2px;
   text-underline-offset: 5px;
   font-style: oblique;
-  color: #3B82F6; /* Electric Blue */
+  color: #3b82f6;
   min-width: 5vw;
- white-space: nowrap;
+  white-space: nowrap;
 }
 
 .dashboardh2 {
   font-size: 1.9em;
+  position: relative;
+  margin-top: 40px;
+  margin-left: -345px;
   text-decoration: underline;
   text-decoration-thickness: 2px;
   text-underline-offset: 5px;
   font-style: oblique;
-  color: #3B82F6; /* Electric Blue */
+  color: #3b82f6;
   min-width: 35vw;
-  margin-top: 20%;
-  margin-left: -95%;
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+
 }
 
 .dashboardh3 {
@@ -78,20 +76,24 @@ body {
 .dashboardh4 {
   position: relative;
   left: -2%;
-  top: 12%;
+  top: 38%;
+  min-width: 425px;
+  white-space: nowrap;
+  margin-top: -60px;
 }
 
 .listByCategory {
+  position: relative;
+  top: -15vh;
   display: flex;
   flex-direction: column;
   position: relative;
 }
 
-
 .task-grid {
-  grid-column: span 2; /* Span across both columns */
+  grid-column: span 2;
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  grid-template-columns: repeat(2, 1fr);
   gap: 10px;
   padding: 10px;
 }
@@ -102,9 +104,9 @@ body {
 }
 
 .task-item2 {
-  border: 1px solid #3B82F6; /* Electric Blue */
-  background-color: #1D1D1D; /* Darker Navy for contrast */
-  color: #E0E0E0; /* Light Gray */
+  border: 1px solid #3b82f6;
+  background-color: #1d1d1d;
+  color: #e0e0e0;
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -112,19 +114,7 @@ body {
   justify-content: center;
 }
 
-
 .task-title {
   font-size: 10px;
-  color: #E0E0E0; /* Light Gray */
-}
-
-@media (min-width: 1000px) {
-  .dashboardh1 {
-    top: 1%; 
-    left: 60%; 
-  }
-  .dashboardh2 {
-    top: 8vh;
-    left: 10%;  
-  }
+  color: #e0e0e0;
 }

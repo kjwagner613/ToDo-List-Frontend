@@ -12,18 +12,27 @@ const TaskSelect = () => {
     const fetchTasks = async () => {
       try {
         const fetchedTasks = await taskService.index();
-        const userTasks = fetchedTasks.filter(task => task.author._id === user._id);
+        console.log('Fetched Tasks:', fetchedTasks);
+        const userTasks = fetchedTasks.filter(
+          task => task.author && task.author._id === user._id
+        );
+        console.log('User Tasks:', userTasks);
         setTasks(userTasks);
       } catch (err) {
         console.error('Error fetching tasks:', err);
       }
     };
-
+  
     fetchTasks();
   }, [user]);
 
   if (!tasks.length) {
-    return <main><p>No tasks found. Create one first!</p></main>;
+    return (
+      <main>
+        <p>No tasks found. Create one first!</p>
+        <Link to="/tasks/create">Click here to create a task</Link>
+      </main>    
+    );
   }
 
   const categorizeTasks = (tasks) => {
