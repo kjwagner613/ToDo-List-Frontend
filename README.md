@@ -1,4 +1,6 @@
-![Todo\_home-screen](src/assets/ToDo-Image.png)
+
+
+[Todo\_home-screen](https://kjs-todo-list.netlify.app/)
 
 [Deployed App Link:](https://kjs-todo-list.netlify.app/)
  
