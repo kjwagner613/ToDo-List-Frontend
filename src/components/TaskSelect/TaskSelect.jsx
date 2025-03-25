@@ -26,17 +26,37 @@ const TaskSelect = () => {
     return <main><p>No tasks found. Create one first!</p></main>;
   }
 
+  const categorizeTasks = (tasks) => {
+    return tasks.reduce((categories, task) => {
+      const category = task.category || 'Uncategorized';
+      if (!categories[category]) {
+        categories[category] = [];
+      }
+      categories[category].push(task);
+      return categories;
+    }, {});
+  }
+
+  const categorizedTasks = categorizeTasks(tasks);
+
   return (
     <main>
       <div className="selectForm-container">
         <h1 className="select-h1">Select a Task to Update</h1>
-        <ul className="select-grid">
-          {tasks.map((task) => (
-            <li key={task._id} className='select-grid-item'>
-              <Link to={`/tasks/${task._id}`}>{task.title} - {task.category}</Link>
-            </li>
+        <div className="select-grid">
+          {Object.keys(categorizedTasks).map(category => (
+            <div key={category} className="task-category">
+              <h2 className="task-category-title">{category}</h2>
+              <ul>
+                {categorizedTasks[category].map(task => (
+                  <li key={task._id} className='select-grid-item'>
+                    <Link to={`/tasks/${task._id}`}>{task.title} </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           ))}
-        </ul>
+        </div>
       </div>
     </main>
   );

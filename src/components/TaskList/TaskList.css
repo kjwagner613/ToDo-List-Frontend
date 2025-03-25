@@ -19,12 +19,12 @@
 
 .task-item {
   border: 1px solid #3B82F6;
-  border-radius: 8px;
-  padding: 10px;
+  border-radius: 3px;
+  padding: 3px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   text-align: center;
   color: #E0E0E0;
-  max-width: 95%;
+  max-width: 100%;
 }
 
 .task-details {
@@ -36,6 +36,7 @@
 
 .task-title {
   font-size: 0.9em;
+  text-decoration: underline;
   font-weight: bold;
   margin-bottom: 5px;
   color: #E0E0E0;
@@ -55,6 +56,14 @@
 .task-owner,
 .task-date,
 .task-text {
+  margin-bottom: 2px;
+  color: #E0E0E0;
+}
+
+.task-owner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 2px;
   color: #E0E0E0;
 }
