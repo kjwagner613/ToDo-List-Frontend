@@ -59,34 +59,40 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="dashboard-container">
-      <main>
-        <h1 className="dashboardh1">Welcome, {user.username}</h1>
-        <h2 className="dashboardh2">Here are your task statistics:</h2>
-        <div className="task-stats">
-        
-          <div className="listByCategory">
-          <h3 className="dashboardh3">Tasks by Category:</h3>
-          <div className="statsList">
-          <p>Total Tasks: {stats.totalTasks}</p>
-          <ul>
-            {Object.keys(stats.categoryCounts).map(category => (
-              <li key={category}>
-                {category}: {stats.categoryCounts[category]}
-              </li>
-            ))}
-          </ul>
-          <h4 className="dashboardh4">Tasks Older Than 5 Days by Category:</h4>
-          <ul>
-            {Object.keys(stats.oldTasksCounts).map(category => (
-             <span className="oldTasksStats"> <li key={category}>
-                {category}: {stats.oldTasksCounts[category]}
-              </li></span>
-            ))}
-          </ul></div></div>
-        </div>
-      </main>
+<div className="dashboard-container">
+  <h1 className="dashboardh1">Welcome, {user.username}</h1>
+  <h2 className="dashboardh2">Here are your task statistics:</h2>
+  <div className="task-stats">
+    <div className="listByCategory">
+      <h3 className="dashboardh3">Tasks by Category:</h3>
+      <ul className="statsList">
+        {Object.keys(stats.categoryCounts).map((category) => (
+          <li key={category}>
+            {category}: {stats.categoryCounts[category]}
+            </li>
+        ))}
+      </ul>
     </div>
+    <div className="listByCategory">
+      <h4 className="dashboardh4">Tasks Older Than 5 Days by Category:</h4>
+      <ul className="statsList">
+        {Object.keys(stats.oldTasksCounts).map((category) => (
+          <li key={category}>
+            {category}: {stats.oldTasksCounts[category]}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+  {/* <ul className="task-grid">
+    {tasks.map((task) => (
+      <li key={task._id} className="task-item2">
+        <strong className="task-title">Title: {task.title}</strong>
+        <span className="task-category">Category: {task.category || 'No Category'}</span>
+      </li>
+    ))}
+  </ul> */}
+</div>
   );
 };
 

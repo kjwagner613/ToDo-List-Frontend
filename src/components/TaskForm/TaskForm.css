@@ -1,8 +1,8 @@
 .tform-app-container {
   display: flex;
   position: absolute;
-  top: 15%;
-  left: 5%;
+  top: 7%;
+  left: 11%;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -11,8 +11,8 @@
 
 .taskFormContainer {
   display: grid;
-  grid-template-columns: 1fr 2fr; /* Two columns: 1fr for labels, 2fr for inputs */
-  gap: 20px; /* Space between grid items */
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
   width: 80%;
   min-width: 500px;
   margin: 0 auto;
@@ -24,12 +24,12 @@
 }
 
 .taskFormStyle {
-  display: contents; /* Use contents to allow grid items to be direct children */
+  display: contents;
 }
 
 .taskFormStyle label {
   font-weight: bold;
-  align-self: center; /* Center labels vertically */
+  align-self: center;
 }
 
 .taskFormStyle input,
@@ -39,8 +39,8 @@
   border-radius: 4px;
   padding: 10px;
   font-size: 1em;
-  width: 100%; /* Ensure inputs take full width of the grid column */
-  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .taskFormStyle textarea {
@@ -48,14 +48,14 @@
 }
 
 .taskFormStyle button {
-  grid-column: 1 / span 2; /* Span both columns */
+  grid-column: 1 / span 2;
   padding: 10px;
   background-color: #333;
   color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  justify-self: center; /* Center the button horizontally */
+  justify-self: center;
 }
 
 .taskFormStyle button:hover {

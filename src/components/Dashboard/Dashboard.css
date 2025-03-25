@@ -5,58 +5,65 @@ body {
   margin: 0 auto; 
 }
 
-.task-stats {
-  font-size: 1em;
-  position: relative;
-  top: 8%;
+
+.statsList {
+  grid-column: span 1; /* Occupies one column */
+  border: 1px solid #3B82F6; /* Electric Blue border */
+  padding: 10px;
 }
+
 
 .oldTasksStats {
   position: relative;
   top: 0; /* Added missing value */
 }
-
 .dashboard-container {
-  display: flex;
-  flex-direction: column;
-  max-width: 800px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  grid-template-rows: auto; /* Rows adjust dynamically to content */
+  gap: 20px; /* Adds spacing between grid items */
+  max-width: 900px;
+  padding: 20px;
+  background-color: #121212; /* Deep Navy */
+ 
   margin: 0 auto;
-  margin-top: 10px;
-  margin-bottom: 15%;
-  position: absolute;
-  top: 15%;
-  left: 15%;
+  margin-top: 4%;
+  margin-left: -15%;
 }
+.task-stats {
+  grid-column: span 2; /* Span across both columns */
+  display: grid;
+  gap: 10px;
+}
+
+.listByCategory {
+  grid-column: span 1; /* Occupies one column */
+}
+
 
 .dashboardh1 {
   font-size: 1.9em;
-  position: fixed;
+  margin-left: 1%;
+  margin-top: 3%;
   text-decoration: underline;
   text-decoration-thickness: 2px;
   text-underline-offset: 5px;
-  top: 5vh;
-  left: 11%;
   font-style: oblique;
   color: #3B82F6; /* Electric Blue */
   min-width: 5vw;
-  margin: 10px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+ white-space: nowrap;
 }
 
 .dashboardh2 {
   font-size: 1.9em;
-  position: fixed;
   text-decoration: underline;
   text-decoration-thickness: 2px;
   text-underline-offset: 5px;
-  top: 10vh;
-  left: 30%;
   font-style: oblique;
   color: #3B82F6; /* Electric Blue */
   min-width: 35vw;
-  margin: 10px;
+  margin-top: 20%;
+  margin-left: -95%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -64,14 +71,14 @@ body {
 
 .dashboardh3 {
   position: relative;
-  left: -5%;
-  top: 25%;
+  left: -2%;
+  top: 12%;
 }
 
 .dashboardh4 {
   position: relative;
-  left: -5%;
-  top: 25%;
+  left: -2%;
+  top: 12%;
 }
 
 .listByCategory {
@@ -80,14 +87,13 @@ body {
   position: relative;
 }
 
+
 .task-grid {
+  grid-column: span 2; /* Span across both columns */
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: auto;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
   gap: 10px;
-  border: none;
   padding: 10px;
-  min-width: 1400px;
 }
 
 .statsList {
@@ -96,22 +102,23 @@ body {
 }
 
 .task-item2 {
-  border: 2px solid #3B82F6; /* Electric Blue */
+  border: 1px solid #3B82F6; /* Electric Blue */
+  background-color: #1D1D1D; /* Darker Navy for contrast */
+  color: #E0E0E0; /* Light Gray */
   padding: 10px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  font-size: 1em;
-  color: #E0E0E0; /* Light Gray */
 }
+
 
 .task-title {
   font-size: 10px;
   color: #E0E0E0; /* Light Gray */
 }
 
-@media (min-width: 850px) {
+@media (min-width: 1000px) {
   .dashboardh1 {
     top: 1%; 
     left: 60%; 

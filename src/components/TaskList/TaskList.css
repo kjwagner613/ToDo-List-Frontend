@@ -1,10 +1,8 @@
 .task-list-container {
   position: absolute;
   align-self: center;
-  transform:translate(-50%, -50%);
-  align-self: center;
-  top: 115%;
-  left: 30%;
+  top: 0%;
+  left: 5%;
   margin-left: 50px;
   width: 900px;
 }
@@ -33,6 +31,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
 }
 
 .task-title {
@@ -44,10 +43,9 @@
 
 .taskListh1 {
   position: fixed;
-  top: 5%;
+  top: 6%;
+  left: 11%;
   align-self: center;
-  transform:translate(-50%, -50%);
-  left: 75%;
   font-size: 40px;
   color: #E0E0E0;
   z-index: 100;

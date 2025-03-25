@@ -1,3 +1,10 @@
+.selectForm-container {
+  position: absolute;
+  left: 10.2%;
+  top: -2%;
+
+}
+
 .select-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
