@@ -1,70 +1,81 @@
+/* src/components/TaskDetails/TaskDetails.css */
 .taskDetail-appContainer {
   color: #E0E0E0;
-  margin-top: 12%;
-  margin-left: -2%;
-  font-size: 1.2em;;
+  position: absolute;
+  top: 20vh;
+  font-size: 1.2em;
 }
 
 .task-details-section {
   display: grid;
+  position: relative;
+  top: 2vh;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto auto;
+  grid-template-rows: auto auto auto auto auto;
   gap: 5px;
   padding: 10px;
   border: 1px solid #3B82F6;
   border-radius: 8px;
   background-color: #121212;
   color: #E0E0E0;
+  grid-template-areas:
+    "category-label category-value"
+    "title-label title-value"
+    "created-by-label created-by-value"
+    "task-text task-text"
+    "edit-button edit-button";
 }
 
-.taskDetailEditButton {
-  grid-column: 1 / span 2;
-  padding: 5px;
-  background-color: #3B82F6;
-  color: #E0E0E0;
-  margin: 5px;
-  border-radius: 4px;
-  cursor: pointer;
-  justify-self: center;
-}
-
-.taskDetailDeleteButton {
-  grid-column: 1 / span 2;
-  padding: 5px;
-  background-color: #3B82F6;
-  color: #E0E0E0;
-  margin: 2px;
-  border-radius: 4px;
-  cursor: pointer;
-  justify-self: center;
-}
 .taskDetailh1 {
-position: fixed;
-top: 5%;
-
-}
-.task-title {
-  grid-column: 1 / span 2;
-  font-size: 1.5em;
-  font-weight: bold;
-  color: #E0E0E0;
+  position: fixed;
+  top: 10%;
+  font-size: 40px;;
 }
 
-.task-owner {
-  grid-column: 1 / span 1;
-  color: #E0E0E0;
+.category-label {
+  grid-area: category-label;
 }
 
-.task-date {
-  grid-column: 2 / span 1;
-  text-align: right;
-  color: #E0E0E0;
+.category-value {
+  grid-area: category-value;
+}
+
+.title-label {
+  grid-area: title-label;
+}
+
+.title-value {
+  grid-area: title-value;
+}
+
+.created-by-label {
+  grid-area: created-by-label;
+}
+
+.created-by-value {
+  grid-area: created-by-value;
 }
 
 .task-text {
-  grid-column: 1 / span 2;
+  grid-area: task-text;
   margin-top: 10px;
   color: #E0E0E0;
+}
+
+.detailsEditButton {
+  width: 100px;
+  padding: 10px;
+  background-color: #3B82F6;
+  color: #E0E0E0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  align-self: flex-end;
+  margin-top: auto;
+}
+
+.detailsEditButton:hover {
+  background-color: #555;
 }
 
 .comment-section {
@@ -84,7 +95,8 @@ top: 5%;
 
 .comment-form textarea {
   resize: none;
-  padding: 0;
+  width: 100%;
+  padding: 10px;
   border: 1px solid #3B82F6;
   border-radius: 4px;
   font-size: 1em;
@@ -109,4 +121,41 @@ top: 5%;
 
 .comment-form button:hover {
   background-color: #555;
+}
+
+.comment-table-container {
+  margin-top: 10px;
+  width: 800px; /* Match the comment form width */
+}
+
+.comment-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 5px;
+  color: #E0E0E0;
+}
+
+.comment-table th,
+.comment-table td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #3B82F6;
+}
+
+.comment-table th {
+  background-color: #3B82F6;
+  color: #E0E0E0;
+  font-weight: bold;
+}
+
+.comment-header-row td {
+  font-weight: bold;
+}
+
+.comment-text-row td {
+  padding-left: 20px; /* Indent the comment text */
+}
+
+.comment-table tbody tr:last-child td {
+  border-bottom: none; /* Remove border from the last comment */
 }

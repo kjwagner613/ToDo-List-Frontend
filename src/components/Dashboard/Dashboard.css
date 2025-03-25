@@ -17,6 +17,7 @@ body {
 }
 .dashboard-container {
   position: relative;
+  top: 10vh;
   left: 1vw;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -42,7 +43,8 @@ body {
 .dashboardh1 {
   font-size: 1.9em;
   position: relative;
-  left: 65vh;
+  top: -10vh;
+  left: 5vw;
   text-decoration: underline;
   text-decoration-thickness: 2px;
   text-underline-offset: 5px;
@@ -55,8 +57,8 @@ body {
 .dashboardh2 {
   font-size: 1.9em;
   position: relative;
-  margin-top: 40px;
-  margin-left: -345px;
+  top: -2vh;
+  left: -20vw;
   text-decoration: underline;
   text-decoration-thickness: 2px;
   text-underline-offset: 5px;

@@ -1,4 +1,6 @@
-import { useParams, Link } from "react-router";
+// src/components/TaskDetails/TaskDetails.jsx
+import React from 'react';
+import { useParams, Link } from "react-router-dom";
 import { useState, useEffect, useContext } from 'react';
 import * as taskService from '../../services/taskService';
 import CommentForm from "../CommentForm/CommentForm";
@@ -38,12 +40,10 @@ const TaskDetails = (props) => {
     }
   };
 
-  // Display a loading message while data is being fetched
   if (loading) {
     return <main>Loading task details...</main>;
   }
 
-  // Display a fallback if task not found or data is invalid
   if (!task) {
     return <main>Task not found. Please try again later.</main>;
   }
@@ -53,50 +53,60 @@ const TaskDetails = (props) => {
       <div className="taskDetail-appContainer">
         <h1 className="taskDetailh1">TASK DETAILS</h1>
         <section className="task-details-section">
-          <header>
-            <p>Category: {task?.category?.toUpperCase() || 'No Category'}</p>
-            <h2 className="taskDetailh2">Title: {task?.title || 'Untitled Task'}</h2>
-            <p>
-              Created By: {task?.author?.username
-                ? `${task.author.username} on ${new Date(task.createdAt).toLocaleDateString()}`
-                : 'Author unknown'}
-            </p>
-            {task?.author?._id === user?._id && (
-              <>
-                <Link to={`/tasks/${taskId}/edit`}>
-                 <span  className="taskDetailEditButton"> <button>Edit</button></span>
-                </Link>
-                <span className="taskDetailDeleteButton"><button  onClick={() => props.handleDeleteTask(taskId)}>Delete</button></span>
-              </>
-            )}
-            <p>{task?.text || 'No details available for this task.'}</p>
-          </header>
+          <div className="category-label">Category:</div>
+          <div className="category-value">{task.category?.toUpperCase() || 'No Category'}</div>
+          <div className="title-label">Title:</div>
+          <div className="title-value">{task.title || 'Untitled Task'}</div>
+          <div className="created-by-label">Created By:</div>
+          <div className="created-by-value">
+            {task.author?.username
+              ? `${task.author.username} on ${new Date(task.createdAt).toLocaleDateString()}`
+              : 'Author unknown'}
+          </div>
+          <div className="task-text">{task.text || 'No details available for this task.'}</div>
+          {task.author?._id === user?._id && (
+            <>
+              <Link to={`/tasks/${taskId}/edit`}><button className="detailsEditButton">Edit</button>
+              </Link>
+            </>
+          )}
         </section>
-
         <section className="comment-section">
+          <h2>Enter your comment</h2>
           <CommentForm handleAddComment={handleAddComment} />
-          <div className="comment-grid">
-            {(!task?.comments || task.comments.length === 0) ? (
+          <div className="comment-table-container">
+            {(!task.comments || task.comments.length === 0) ? (
               <p>There are no comments yet.</p>
             ) : (
-              task.comments.map((comment) => (
-                <article key={comment._id} className="comment-article">
-                  <header>
-                    <p>
-                      {comment?.author?.username
-                        ? `${comment.author.username} commented on ${new Date(comment.createdAt).toLocaleDateString()}`
-                        : 'Unknown commenter'}
-                    </p>
-                    <p>{comment?.text || 'No text available'}</p>
-                  </header>
-                </article>
-              ))
+              <table className="comment-table">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Commenter</th>
+                    <th>Comment</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {task.comments.map((comment) => (
+                    <React.Fragment key={comment._id}>
+                      <tr className="comment-header-row">
+                        <td>{new Date(comment.createdAt).toLocaleDateString()}</td>
+                        <td>{comment.author?.username || 'Unknown'}</td>
+                        <td></td> {/* Empty cell for the header row's comment */}
+                      </tr>
+                      <tr className="comment-text-row">
+                        <td colSpan="3">{comment.text || 'No text available'}</td>
+                      </tr>
+                    </React.Fragment>
+                  ))}
+                </tbody>
+              </table>
             )}
           </div>
         </section>
       </div>
     </main>
   );
-}
+};
 
 export default TaskDetails;

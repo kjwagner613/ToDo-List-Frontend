@@ -1,0 +1,62 @@
+main {
+  color: #E0E0E0;
+  margin-top: 12%;
+  margin-left: 2%;
+  font-size: 1.2em;
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.task-details {
+  display: grid;
+  border: #3B82F6 solid 1px;
+  grid-template-columns: auto 1fr;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.task-detail-row {
+  display: contents;
+}
+
+.task-detail-label {
+  font-weight: bold;
+  padding: 8px; /* Add some padding for better spacing */
+  border-bottom: #3B82F6 solid 1px; /* Add bottom border */
+  border-right: #3B82F6 solid 1px; /* Add right border */
+}
+
+.task-detail-value {
+  margin-left: 10px;
+  padding: 8px; /* Add some padding */
+  border-bottom: #3B82F6 solid 1px; /* Add bottom border */
+}
+
+/* Remove border from the last row's label and value */
+.task-detail-row:last-child .task-detail-label,
+.task-detail-row:last-child .task-detail-value {
+  border-bottom: none;
+}
+
+button {
+  padding: 10px;
+  background-color: #3B82F6;
+  color: #E0E0E0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+.success-message {
+  color: #3B82F6;
+  margin-top: 15px;
+  font-weight: bold;
+}

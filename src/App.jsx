@@ -1,5 +1,5 @@
 import { useContext, useState, useEffect } from 'react';
-import { Routes, Route, useNavigate } from 'react-router';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 
 import * as taskService from './services/taskService';
 
@@ -10,11 +10,13 @@ import Landing from './components/Landing/Landing';
 import Dashboard from './components/Dashboard/Dashboard';
 import TaskList from './components/TaskList/TaskList';
 import TaskDetails from './components/TaskDetails/TaskDetails';
+import TaskDeleteSelect from './components/TaskDeleteSelect/TaskDeleteSelect';
+import TaskDelete from './components/TaskDelete/TaskDelete';
 import TaskForm from './components/TaskForm/TaskForm';
 import TaskSelect from './components/TaskSelect/TaskSelect';
 
 import { UserContext } from './contexts/UserContext';
-import './App.css';
+
 
 const App = () => {
   const [tasks, setTasks] = useState([]);
@@ -25,7 +27,6 @@ const App = () => {
   useEffect(() => {
     const fetchAllTasks = async () => {
       const tasksData = await taskService.index();
-
       setTasks(tasksData);
     };
 
@@ -51,16 +52,16 @@ const App = () => {
   };
 
   return (
-   
     <>
       <NavBar />
-    
       <Routes>
         <Route path='/' element={user ? <Dashboard /> : <Landing />} />
         {user ? (
           <>
             <Route path='/tasks' element={<TaskList tasks={tasks} />} />
             <Route path='/tasks/update' element={<TaskSelect />} />
+            <Route path="/tasks/delete/:taskId" element={<TaskDelete />} />
+            <Route path="/tasks/TaskDeleteSelect" element={<TaskDeleteSelect />} />
             <Route path='/tasks/:taskId' element={<TaskDetails handleDeleteTask={handleDeleteTask} />} />
             <Route path='/tasks/new' element={<TaskForm handleAddTask={handleAddTask} />} />
             <Route path='/tasks/:taskId/edit' element={<TaskForm handleUpdateTask={handleUpdateTask} />} />
@@ -72,8 +73,8 @@ const App = () => {
           </>
         )}
       </Routes>
-         </>
-           );
+    </>
+  );
 };
 
 export default App;

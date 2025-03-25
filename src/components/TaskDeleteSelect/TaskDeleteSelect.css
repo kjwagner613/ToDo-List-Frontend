@@ -1,0 +1,41 @@
+.task-gridSelect {
+  position: relative;
+  top: 8vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  padding: 20px;
+}
+
+.task-gridSelect-title {
+  position: absolute;
+  top: 10vh;
+  left: 10vw;
+  grid-column: span 2;
+  text-align: center;
+  font-size: 40px;;
+  
+}
+
+.task-gridSelect-list {
+  display: contents; /* Allows the list items to be direct children of the grid */
+}
+
+.task-itemGridSelect {
+  background-color: #121212;
+  color: #E0E0E0;
+  padding: 10px;
+  border: 1px solid #3B82F6;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.task-itemGridSelect a {
+  color: #E0E0E0;
+  text-decoration: none;
+}
+
+.task-itemGridSelect a:hover {
+  text-decoration: underline;
+}
+

@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import { UserContext } from '../../contexts/UserContext';
 import './NavBar.css';
 
@@ -20,6 +20,7 @@ const NavBar = () => {
           <li><Link to='/'>Dashboard</Link></li>
           <li><Link to='/tasks/new'>New Task</Link></li>
           <li><Link to="/tasks/update">Update Task</Link></li>
+          <li><Link to="/tasks/TaskDeleteSelect">Delete Task</Link></li>
           <li><Link to="/tasks/">Task List</Link></li>
           <li><Link to='/' onClick={handleSignOut}>Sign Out</Link></li>
         </ul>

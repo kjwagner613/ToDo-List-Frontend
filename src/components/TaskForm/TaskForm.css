@@ -10,6 +10,8 @@
 }
 
 .taskFormContainer {
+  position: relative;
+  top: 10vh;
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 20px;
@@ -21,6 +23,12 @@
   border-radius: 8px;
   background-color: #121212;
   color: #E0E0E0;
+}
+
+.taskFormh1 {
+font-size: 40px;;
+position: absolute;
+top: 3vh;
 }
 
 .taskFormStyle {
