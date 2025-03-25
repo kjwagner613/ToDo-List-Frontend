@@ -10,7 +10,6 @@ import App from './App.jsx';
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
-      {/* Wrap the UserProvider around the App */}
       <UserProvider>
         <App />
       </UserProvider>

@@ -2,9 +2,9 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  width: 100%; /* Set the width of the form */
-  padding: 0; /* Remove padding */
-  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  width: 100%;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .comment-form textarea {
@@ -13,8 +13,8 @@
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 1em;
-  flex-grow: 1; /* Allow the textarea to grow and fill available space */
-  margin: 0; /* Remove margin */
+  flex-grow: 1;
+  margin: 0;
 }
 
 .comment-form button {
@@ -25,8 +25,8 @@
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  align-self: flex-end; /* Align the button to the right */
-  margin-top: auto; /* Push the button to the bottom */
+  align-self: flex-end;
+  margin-top: auto;
 }
 
 .comment-form button:hover {

@@ -1,61 +1,65 @@
-/* 
+body {
+  max-width: 1000px;
+  max-height: auto;
+}
 
-  h1 {
-    position: absolute;
-    top: 77vh;
-    background-color: #333; 
-    color: white; 
-    padding: 1vh 2vw; 
-    width: 10vw;
-    max-width: 700px;;
-    border-left: 5px solid #646cff;
-    margin: 1em 0; 
-    border-radius: 4px;
-     } */
+.landing-container {
+  position: absolute;
+  height: 100vh;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 
+.imageLogo {
+  position: fixed;
+  bottom: 100px;
+  left: 750px;
+  width: 150px;
+  height: 190px;
+}
 
-  .todo {
-color: red;
-position: fixed;
-top: 20vh;
-left: 25vw;
-width: 60vw;
-transform: translate(-20%, -80%);
-text-align: left;
-text-indent: 2vw;
-font-size: 60px;
-font-style: italic;
-  }
+.todo {
+  color: red;
+  position: fixed;
+  top: 15vh;
+  left: 25vw;
+  width: 60vw;
+  transform: translate(-20%, -80%);
+  text-align: left;
+  text-indent: 2vw;
+  font-size: 60px;
+  font-style: italic;
+}
 
-  h3 {
-    position: absolute;  
-    top: 25vh;
-    left: 27vw;
-    font-size: 35px;
-    background-color: #333; 
-    color: white; 
-    padding: 1.5vh 2vw; 
-    width: 60vw;
-    max-width: 700px;
-    border-left: 5px solid #646cff; 
-    margin: 1em 0; 
-    border-radius: 4px;
-   
-  }
+h3 {
+  position: fixed;
+  top: 30vh;
+  left: 12vw;
+  font-size: 35px;
+  background-color: #333;
+  color: white;
+  padding: 1.5vh 2vw;
+  width: 400px;
+  
+  border-left: 5px solid #646cff;
+  margin: 1em 0;
+  border-radius: 4px;
+}
 
-  h4 {
-    font-size: 30px;
-    position: absolute;
-    top: 40vh;
-    left: 41vw;
-    background-color: #333; 
-    color: white; 
-    padding: 1.5vh 2vw; 
-    width: 46vw;
-    max-width: 700px;
-    border-left: 5px solid #646cff; 
-    margin: 1em 0; 
-    border-radius: 4px;
- 
-    
-  }
+h4 {
+  font-size: 30px;
+  position: fixed;
+  top: 45vh;
+  left: 31vw;
+  background-color: #333;
+  color: white;
+  padding: 1.5vh 2vw;
+  width: 500px;
+  border-left: 5px solid #646cff;
+
+  border-radius: 4px;
+}

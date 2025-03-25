@@ -9,6 +9,8 @@ body {
   grid-column: span 1;
   border: 1px solid #3b82f6;
   padding: 10px;
+  font-size: 30px;
+  color: #3B82F6;
 }
 
 .oldTasksStats {
@@ -40,6 +42,10 @@ body {
   margin-top: 55px;
 }
 
+.dashTasks {
+  color: #3B82F6;
+}
+
 .dashboardh1 {
   font-size: 1.9em;
   position: relative;
@@ -58,7 +64,7 @@ body {
   font-size: 1.9em;
   position: relative;
   top: -2vh;
-  left: -20vw;
+  left: 7vw;
   text-decoration: underline;
   text-decoration-thickness: 2px;
   text-underline-offset: 5px;
@@ -78,7 +84,7 @@ body {
 .dashboardh4 {
   position: relative;
   left: -2%;
-  top: 38%;
+  top: 32%;
   min-width: 425px;
   white-space: nowrap;
   margin-top: -60px;
@@ -102,7 +108,7 @@ body {
 
 .statsList {
   position: relative;
-  top: -5%;
+  top: -7%;
 }
 
 .task-item2 {

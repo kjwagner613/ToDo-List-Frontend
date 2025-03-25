@@ -3,36 +3,35 @@ const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}/tasks`;
 const index = async () => {
   try {
     const res = await fetch(BASE_URL, {
-      headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
+      headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
     });
     const data = await res.json();
-    console.log('Fetched tasks from backend:', data);
-    return data; // Send the data to the frontend
+    console.log("Fetched tasks from backend:", data);
+    return data;
   } catch (error) {
-    console.error('Error fetching tasks:', error);
-    throw error; // Ensure errors are surfaced
+    console.error("Error fetching tasks:", error);
+    throw error;
   }
 };
-
 
 const show = async (taskId) => {
   try {
     const res = await fetch(`${BASE_URL}/${taskId}`, {
-      headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
+      headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
     });
     return res.json();
   } catch (error) {
     console.log(error);
   }
-}
+};
 
 const create = async (taskFormData) => {
   try {
     const res = await fetch(BASE_URL, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        Authorization: `Bearer ${localStorage.getItem('token')}`,
-        'Content-Type': 'application/json',
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(taskFormData),
     });
@@ -41,15 +40,15 @@ const create = async (taskFormData) => {
   } catch (error) {
     console.log(error);
   }
-}
+};
 
 const createComment = async (taskId, commentFormData) => {
   try {
     const res = await fetch(`${BASE_URL}/${taskId}/comments`, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        Authorization: `Bearer ${localStorage.getItem('token')}`,
-        'Content-Type': 'application/json',
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(commentFormData),
     });
@@ -58,14 +57,14 @@ const createComment = async (taskId, commentFormData) => {
   } catch (error) {
     console.log(error);
   }
-}
+};
 
 const deleteTask = async (taskId) => {
   try {
     const res = await fetch(`${BASE_URL}/${taskId}`, {
-      method: 'DELETE',
+      method: "DELETE",
       headers: {
-        Authorization: `Bearer ${localStorage.getItem('token')}`,
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
     });
     return res.json();
@@ -77,10 +76,10 @@ const deleteTask = async (taskId) => {
 const update = async (taskId, taskFormData) => {
   try {
     const res = await fetch(`${BASE_URL}/${taskId}`, {
-      method: 'PUT',
+      method: "PUT",
       headers: {
-        Authorization: `Bearer ${localStorage.getItem('token')}`,
-        'Content-Type': 'application/json',
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(taskFormData),
     });
@@ -90,11 +89,4 @@ const update = async (taskId, taskFormData) => {
   }
 };
 
-export {
-  index,
-  show,
-  create,
-  createComment,
-  deleteTask,
-  update
-}
+export { index, show, create, createComment, deleteTask, update };

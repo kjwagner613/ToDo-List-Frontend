@@ -22,7 +22,7 @@ const TaskSelect = () => {
         console.error('Error fetching tasks:', err);
       }
     };
-  
+
     fetchTasks();
   }, [user]);
 
@@ -31,7 +31,7 @@ const TaskSelect = () => {
       <main>
         <p>No tasks found. Create one first!</p>
         <Link to="/tasks/create">Click here to create a task</Link>
-      </main>    
+      </main>
     );
   }
 

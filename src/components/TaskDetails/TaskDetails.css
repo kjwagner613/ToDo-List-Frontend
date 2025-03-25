@@ -1,6 +1,5 @@
-/* src/components/TaskDetails/TaskDetails.css */
 .taskDetail-appContainer {
-  color: #E0E0E0;
+  color: #e0e0e0;
   position: absolute;
   top: 20vh;
   font-size: 1.2em;
@@ -14,10 +13,10 @@
   grid-template-rows: auto auto auto auto auto;
   gap: 5px;
   padding: 10px;
-  border: 1px solid #3B82F6;
+  border: 1px solid #3b82f6;
   border-radius: 8px;
   background-color: #121212;
-  color: #E0E0E0;
+  color: #e0e0e0;
   grid-template-areas:
     "category-label category-value"
     "title-label title-value"
@@ -29,7 +28,9 @@
 .taskDetailh1 {
   position: fixed;
   top: 10%;
-  font-size: 40px;;
+  left: 5%;
+  font-size: 40px;
+  background-color: #121212;
 }
 
 .category-label {
@@ -59,14 +60,14 @@
 .task-text {
   grid-area: task-text;
   margin-top: 10px;
-  color: #E0E0E0;
+  color: #e0e0e0;
 }
 
 .detailsEditButton {
   width: 100px;
   padding: 10px;
-  background-color: #3B82F6;
-  color: #E0E0E0;
+  background-color: #3b82f6;
+  color: #e0e0e0;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -80,7 +81,7 @@
 
 .comment-section {
   margin-top: 20px;
-  color: #E0E0E0;
+  color: #e0e0e0;
 }
 
 .comment-form {
@@ -97,21 +98,21 @@
   resize: none;
   width: 100%;
   padding: 10px;
-  border: 1px solid #3B82F6;
+  border: 1px solid #3b82f6;
   border-radius: 4px;
   font-size: 1em;
   flex-grow: 1;
   height: calc(100% - 40px);
   margin: 0;
   background-color: #121212;
-  color: #E0E0E0;
+  color: #e0e0e0;
 }
 
 .comment-form button {
   width: 100px;
   padding: 10px;
-  background-color: #3B82F6;
-  color: #E0E0E0;
+  background-color: #3b82f6;
+  color: #e0e0e0;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -125,37 +126,35 @@
 
 .comment-table-container {
   margin-top: 10px;
-  width: 800px; /* Match the comment form width */
+  width: 800px;
 }
 
 .comment-table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 5px;
-  color: #E0E0E0;
+  color: #e0e0e0;
 }
 
 .comment-table th,
 .comment-table td {
   padding: 8px;
   text-align: left;
-  border-bottom: 1px solid #3B82F6;
+  border-bottom: 1px solid #3b82f6;
 }
 
 .comment-table th {
-  background-color: #3B82F6;
-  color: #E0E0E0;
+  background-color: #3b82f6;
+  color: #e0e0e0;
   font-weight: bold;
 }
 
-.comment-header-row td {
-  font-weight: bold;
+.comment-row td {
+ 
 }
 
-.comment-text-row td {
-  padding-left: 20px; /* Indent the comment text */
-}
+
 
 .comment-table tbody tr:last-child td {
-  border-bottom: none; /* Remove border from the last comment */
+  border-bottom: none;
 }

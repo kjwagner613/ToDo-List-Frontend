@@ -34,8 +34,8 @@ const TaskDeleteSelect = () => {
 
   return (
     <main>
-       <h1 className="task-gridSelect-title">Select a Task to Delete</h1>
-      <div className="task-gridSelect">       
+      <h1 className="task-gridSelect-title">Select a Task to Delete</h1>
+      <div className="task-gridSelect">
         <ul className="task-gridSelect-list">
           {tasks.map(task => (
             <li key={task._id} className="task-itemGridSelect">

@@ -10,7 +10,7 @@ const TaskDelete = () => {
   const { user } = useContext(UserContext);
   const [task, setTask] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [deletionSuccess, setDeletionSuccess] = useState(false); // New state
+  const [deletionSuccess, setDeletionSuccess] = useState(false);
 
   useEffect(() => {
     const fetchTask = async () => {
@@ -30,14 +30,14 @@ const TaskDelete = () => {
   const handleDelete = async () => {
     try {
       await taskService.deleteTask(taskId);
-      setDeletionSuccess(true); // Set success state
-      // Optionally, you can set a timeout to navigate after a short delay
+      setDeletionSuccess(true);
+
       setTimeout(() => {
         navigate('/');
-      }, 1500); // Navigate after 1.5 seconds
+      }, 3000);
     } catch (error) {
       console.error("Error deleting task:", error);
-      // Optionally, you could set an error message state here
+
     }
   };
 

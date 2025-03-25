@@ -38,50 +38,50 @@ const SignUpForm = () => {
 
   return (
     <main>
-       <div className="appcontainerSignIn">
-       <p>{message}</p>
-      <div className="signInFormContainer">
-      <h1 className="signInh1">Sign Up</h1>
-      <form onSubmit={handleSubmit}>
-      <div className='SignIn-Form-Fields2'>
-          <label htmlFor='username'>Username:</label>
-          <input
-            type='text'
-            id='name'
-            value={username}
-            name='username'
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className='SignIn-Form-Fields2'>
-          <label htmlFor='password'>Password:</label>
-          <input
-            type='password'
-            id='password'
-            value={password}
-            name='password'
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className='SignIn-Form-Fields2'>
-          <label htmlFor='confirm'>Confirm Password:</label>
-          <input
-            type='password'
-            id='confirm'
-            value={passwordConf}
-            name='passwordConf'
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <span className="SignUpButton"><button disabled={isFormInvalid()}>Sign Up</button></span>
-          <span className="CancelButton2"><button onClick={() => navigate('/')}>Cancel</button></span>
-        </div>
-      </form>
-      </div></div>
+      <div className="appcontainerSignIn">
+        <p>{message}</p>
+        <div className="signInFormContainer">
+          <h1 className="signInh1">Sign Up</h1>
+          <form onSubmit={handleSubmit}>
+            <div className='SignIn-Form-Fields2'>
+              <label htmlFor='username'>Username:</label>
+              <input
+                type='text'
+                id='name'
+                value={username}
+                name='username'
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className='SignIn-Form-Fields2'>
+              <label htmlFor='password'>Password:</label>
+              <input
+                type='password'
+                id='password'
+                value={password}
+                name='password'
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className='SignIn-Form-Fields2'>
+              <label htmlFor='confirm'>Confirm Password:</label>
+              <input
+                type='password'
+                id='confirm'
+                value={passwordConf}
+                name='passwordConf'
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div>
+              <span className="SignUpButton2"><button disabled={isFormInvalid()}>Sign Up</button></span>
+              <span className="CancelButton2"><button onClick={() => navigate('/')}>Cancel</button></span>
+            </div>
+          </form>
+        </div></div>
     </main>
   );
 };

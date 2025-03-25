@@ -10,15 +10,15 @@ const CommentForm = ({ handleAddComment }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const form = e.target; // Get the form element
+    const form = e.target; 
   
     if (form.checkValidity()) {
-      // Form is valid, proceed with adding the comment
+      
       handleAddComment(formData);
-      setFormData({ text: '' }); // Clear the form after submission
+      setFormData({ text: '' }); 
     } else {
-      // Form is invalid, browser will show default messages
-      // You could optionally add custom visual feedback here
+      
+      
       console.log("Comment form is invalid");
     }
   };

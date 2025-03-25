@@ -38,13 +38,13 @@ const Dashboard = () => {
     tasks.forEach(task => {
       const category = task.category || 'Uncategorized';
 
-      // Count tasks in each category
+
       if (!categoryCounts[category]) {
         categoryCounts[category] = 0;
       }
       categoryCounts[category]++;
 
-      // Count old tasks in each category
+
       if (new Date(task.createdAt) < thirtyDaysAgo) {
         if (!oldTasksCounts[category]) {
           oldTasksCounts[category] = 0;
@@ -61,40 +61,32 @@ const Dashboard = () => {
   };
 
   return (
-<div className="dashboard-container">
-  <h1 className="dashboardh1">Welcome, {user.username}</h1>
-  <h2 className="dashboardh2">Here are your task statistics:</h2>
-  <div className="task-stats">
-    <div className="listByCategory">
-      <h3 className="dashboardh3">Tasks by Category:</h3>
-      <ul className="statsList">
-        {Object.keys(stats.categoryCounts).map((category) => (
-          <li key={category}>
-            {category}: {stats.categoryCounts[category]}
-            </li>
-        ))}
-      </ul>
+    <div className="dashboard-container">
+      <h1 className="dashboardh1">Welcome, {user.username}</h1>
+      <h2 className="dashboardh2">Here are some task metrics.</h2>
+      <div className="task-stats">
+        <div className="listByCategory">
+          <h3 className="dashboardh3">Tasks by Category:</h3>
+          <ul className="statsList">
+            {Object.keys(stats.categoryCounts).map((category) => (
+              <li key={category}>
+                {category}: {stats.categoryCounts[category]}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="listByCategory">
+          <h4 className="dashboardh4">Tasks Older Than 5 Days by Category:</h4>
+          <ul className="statsList">
+            {Object.keys(stats.oldTasksCounts).map((category) => (
+              <li className="dashTasks" key={category}>
+                {category}: {stats.oldTasksCounts[category]}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
     </div>
-    <div className="listByCategory">
-      <h4 className="dashboardh4">Tasks Older Than 5 Days by Category:</h4>
-      <ul className="statsList">
-        {Object.keys(stats.oldTasksCounts).map((category) => (
-          <li key={category}>
-            {category}: {stats.oldTasksCounts[category]}
-          </li>
-        ))}
-      </ul>
-    </div>
-  </div>
-  {/* <ul className="task-grid">
-    {tasks.map((task) => (
-      <li key={task._id} className="task-item2">
-        <strong className="task-title">Title: {task.title}</strong>
-        <span className="task-category">Category: {task.category || 'No Category'}</span>
-      </li>
-    ))}
-  </ul> */}
-</div>
   );
 };
 

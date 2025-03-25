@@ -22,14 +22,14 @@ const SignInForm = () => {
     evt.preventDefault();
     const form = evt.target;
 
-    if (form.checkValidity()) 
-    try {
-      const signedInUser = await signIn(formData);
-      setUser(signedInUser);
-      navigate('/');
-    } catch (err) {
-      setMessage(err.message);
-    }
+    if (form.checkValidity())
+      try {
+        const signedInUser = await signIn(formData);
+        setUser(signedInUser);
+        navigate('/');
+      } catch (err) {
+        setMessage(err.message);
+      }
   };
 
   return (
@@ -62,8 +62,8 @@ const SignInForm = () => {
                 required />
             </div>
             <div>
-              <span className="SignInButton"><button type="submit">Sign In</button></span>
-              <span className="CancelButton"><button type="button" onClick={() => navigate('/')}>Cancel</button></span>
+             <button className="SignInButton2"type="submit">Sign In</button>
+            <button className="SignInButton2"type="button" onClick={() => navigate('/')}>Cancel</button>
             </div>
           </form>
         </div>

@@ -1,4 +1,3 @@
-// src/components/TaskDetails/TaskDetails.jsx
 import React from 'react';
 import { useParams, Link } from "react-router-dom";
 import { useState, useEffect, useContext } from 'react';
@@ -51,7 +50,7 @@ const TaskDetails = (props) => {
   return (
     <main>
       <div className="taskDetail-appContainer">
-        <h1 className="taskDetailh1">TASK DETAILS</h1>
+        <h1 className="taskDetailh1">Task Details</h1>
         <section className="task-details-section">
           <div className="category-label">Category:</div>
           <div className="category-value">{task.category?.toUpperCase() || 'No Category'}</div>
@@ -88,16 +87,11 @@ const TaskDetails = (props) => {
                 </thead>
                 <tbody>
                   {task.comments.map((comment) => (
-                    <React.Fragment key={comment._id}>
-                      <tr className="comment-header-row">
-                        <td>{new Date(comment.createdAt).toLocaleDateString()}</td>
-                        <td>{comment.author?.username || 'Unknown'}</td>
-                        <td></td> {/* Empty cell for the header row's comment */}
-                      </tr>
-                      <tr className="comment-text-row">
-                        <td colSpan="3">{comment.text || 'No text available'}</td>
-                      </tr>
-                    </React.Fragment>
+                    <tr key={comment._id} className="comment-row">
+                      <td>{new Date(comment.createdAt).toLocaleDateString()}</td>
+                      <td>{comment.author?.username || 'Unknown'}</td>
+                      <td>{comment.text || 'No text available'}</td>
+                    </tr>
                   ))}
                 </tbody>
               </table>

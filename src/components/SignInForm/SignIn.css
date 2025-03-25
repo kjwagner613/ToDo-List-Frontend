@@ -15,9 +15,9 @@
 .signInFormContainer {
   display: grid;
   grid-template-columns: 1fr 2fr;
+  text-align: center;
   gap: 20px;
-  width: 80%;
-  max-width: 500px;
+  width: 600px
   margin: 0 auto;
   margin-top: 20%;
   padding: 20px;
@@ -41,22 +41,24 @@
   resize: none;
 }
 
-.signInStyle button {
-  grid-column: 1 / span 2;
+
+
+
+.SignInButton2 {
+  width: 100px;
   padding: 10px;
-  background-color: #333;
-  color: white;
+  background-color: #3b82f6;
+  color: #e0e0e0;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  justify-self: center;
+  align-self: flex-end;
+  margin-top: auto;
 }
 
-.signIntyle button:hover {
+.signInStyle button:hover {
   background-color: #555;
 }
-
-
 
 .SignIn-Form-Fields {
   color: red;
@@ -66,7 +68,7 @@
 .SignIn-Form-Fields2 {
   color: red;
   padding: 10px;
-  margin-bottom: 10px;;
+  margin-bottom: 10px;
 }
 .signInLabel {
   color: red;
@@ -87,26 +89,4 @@
   padding: 10px;
 }
 
-.SignInButton,
-.CancelButton,
-.CancelButton2,
-.SignUpButton {
-  grid-column: 2 / span 2;
-  padding: 10px;
-  gap: 20px;
-  margin: 5px;
-  background-color:#0a2a1f;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  justify-self: center;
-  border-color: #3B82F6;
-  border-width: 1px; /* Adjust the width to your preference */
-  border-style: solid; /* Choose the border style (e.g., solid, dashed, dotted) */
-  
-}
-
-.SignInButton {
-  margin-right: 4px;
-}
+ 

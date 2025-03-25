@@ -1,5 +1,5 @@
 main {
-  color: #E0E0E0;
+  color: #e0e0e0;
   margin-top: 12%;
   margin-left: 2%;
   font-size: 1.2em;
@@ -12,7 +12,7 @@ h1 {
 
 .task-details {
   display: grid;
-  border: #3B82F6 solid 1px;
+  border: #3b82f6 solid 1px;
   grid-template-columns: auto 1fr;
   gap: 10px;
   margin-bottom: 20px;
@@ -24,18 +24,17 @@ h1 {
 
 .task-detail-label {
   font-weight: bold;
-  padding: 8px; /* Add some padding for better spacing */
-  border-bottom: #3B82F6 solid 1px; /* Add bottom border */
-  border-right: #3B82F6 solid 1px; /* Add right border */
+  padding: 8px;
+  border-bottom: #3b82f6 solid 1px;
+  border-right: #3b82f6 solid 1px;
 }
 
 .task-detail-value {
   margin-left: 10px;
-  padding: 8px; /* Add some padding */
-  border-bottom: #3B82F6 solid 1px; /* Add bottom border */
+  padding: 8px;
+  border-bottom: #3b82f6 solid 1px;
 }
 
-/* Remove border from the last row's label and value */
 .task-detail-row:last-child .task-detail-label,
 .task-detail-row:last-child .task-detail-value {
   border-bottom: none;
@@ -43,8 +42,8 @@ h1 {
 
 button {
   padding: 10px;
-  background-color: #3B82F6;
-  color: #E0E0E0;
+  background-color: #3b82f6;
+  color: #e0e0e0;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -56,7 +55,7 @@ button:hover {
 }
 
 .success-message {
-  color: #3B82F6;
+  color: #3b82f6;
   margin-top: 15px;
   font-weight: bold;
 }

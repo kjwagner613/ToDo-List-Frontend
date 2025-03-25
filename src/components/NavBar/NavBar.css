@@ -1,9 +1,5 @@
-/* label {
-  font-size: 14px;  
-} */
-
 button:hover {
-  background-color: #0056b3; 
+  background-color: #0056b3;
 }
 
 nav {
@@ -11,30 +7,30 @@ nav {
   color: white;
   top: 1%;
   display: flex;
-  flex-direction: row;  
-  align-items: flex-start;  
-  padding: 5px;  
-  border-bottom: 1px solid #ccc;  
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 5px;
+  border-bottom: 1px solid #3b82f6;
   z-index: 100;
 }
 
 nav ul {
-  display: flex; 
-  gap: 20px; 
-  list-style: none; 
+  display: flex;
+  gap: 20px;
+  list-style: none;
   padding: 0;
-  margin: 10px 0 0; 
+  margin: 10px 0 0;
   z-index: 1000;
 }
 
 nav li {
-  font-size: 16px; 
+  font-size: 20px;
 }
 
 nav li a {
   text-decoration: none;
-  color: white; 
-  font-weight: bold; 
+  color: white;
+  font-weight: bold;
 }
 
 nav li a:hover {
@@ -44,19 +40,17 @@ nav li a:hover {
 nav .welcome {
   font-size: 18px;
   font-weight: bold;
-  margin-bottom: 10px; 
+  margin-bottom: 10px;
 }
-
-
 
 .nav-links {
   display: flex;
   flex-direction: row;
-  background-color: #333; 
-  color: white; 
-  padding: 10px 15px; 
-  border-left: 5px solid #646cff; 
-  margin: em 0; 
+  background-color: #333;
+  color: white;
+  padding: 10px 15px;
+  border-left: 5px solid #646cff;
+  margin: em 0;
   margin-left: 10px;
   border-radius: 4px;
   gap: 20px;

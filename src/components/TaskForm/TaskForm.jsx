@@ -76,7 +76,7 @@ const TaskForm = (props) => {
               <option value='Medical'>Medical</option>
               <option value='Entertainment'>Entertainment</option>
             </select>
-            <button type='submit'>Submit</button>
+            <button className="taskFormSubmitbutton" type='submit'>Submit</button>
           </form>
         </div>
       </main>

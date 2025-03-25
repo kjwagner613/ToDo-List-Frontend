@@ -1,4 +1,3 @@
-/* src/components/TaskList/TaskList.css */
 .task-list-container {
   position: absolute;
   align-self: center;
@@ -10,11 +9,12 @@
 
 .taskListh1 {
   position: fixed;
-  top: 6%;
+  top: 8%;
   left: 11%;
   align-self: center;
   font-size: 40px;
-  color: #E0E0E0;
+  background-color: #121212;
+  color: #e0e0e0;
   z-index: 100;
 }
 
@@ -24,13 +24,13 @@
 
 .task-category-table {
   margin-bottom: 20px;
-  color: #E0E0E0;
+  color: #e0e0e0;
 }
 
 .task-category-title {
   font-size: 1.5em;
   margin-bottom: 10px;
-  color: #3B82F6;
+  color: #3b82f6;
 }
 
 .task-table {
@@ -43,32 +43,30 @@
 .task-table td {
   padding: 8px;
   text-align: left;
-  border-bottom: 1px solid #3B82F6;
+  border-bottom: 1px solid #3b82f6;
 }
 
 .task-table th {
-  background-color: #3B82F6;
-  color: #E0E0E0;
+  background-color: #3b82f6;
+  color: #e0e0e0;
   font-weight: bold;
 }
 
 .task-table tbody tr:nth-child(even) {
-  background-color: rgba(59, 130, 246, 0.1); /* Light blue for even rows */
+  background-color: rgba(59, 130, 246, 0.1);
 }
 
 .task-table tbody tr:hover {
-  background-color: rgba(59, 130, 246, 0.2); /* Slightly darker on hover */
+  background-color: rgba(59, 130, 246, 0.2);
 }
 
-/* Optional: Style for individual row data if needed */
 nav {
   margin-bottom: 20px;
-  position: fixed; /* Already present, keeps it fixed */
-  top: 0;        /* Ensure it's at the very top */
-  left: 0;       /* Ensure it's at the very left */
-  align-items: center; /* Keep this for vertical alignment of items within the nav */
+  position: fixed;
+  top: 0;
+  left: 0;
+  align-items: center;
   padding: 0 10px;
-  color: #E0E0E0;
-  z-index: 1000; /* Ensure it stays above other content if needed */
-  /* width: 100%;    Optional: If you want it to span the entire top */
+  color: #e0e0e0;
+  z-index: 1000;
 }
