@@ -62,31 +62,32 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard-container">
-      <h1 className="dashboardh1">Welcome, {user.username}</h1>
-      <h2 className="dashboardh2">Here are some task metrics.</h2>
-      <div className="task-stats">
-        <div className="listByCategory">
-          <h3 className="dashboardh3">Tasks by Category:</h3>
-          <ul className="statsList">
-            {Object.keys(stats.categoryCounts).map((category) => (
-              <li key={category}>
-                {category}: {stats.categoryCounts[category]}
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className="listByCategory2">
-          <h4 className="dashboardh4">Tasks Older Than 5 Days by Category:</h4>
-          <ul className="statsList">
-            {Object.keys(stats.oldTasksCounts).map((category) => (
-              <li className="statsList2" key={category}>
-                {category}: {stats.oldTasksCounts[category]}
-              </li>
-            ))}
-          </ul>
-        </div>
+    <h1 className="dashboardh1">Welcome, {user.username}</h1>
+    <h2 className="dashboardh2">Here are some task metrics.</h2>
+    
+    <div className="stats-grid">
+      <div className="stats-board">
+        <h3 className="dashboardh3">Tasks by Category:</h3>
+        <ul className="statsList">
+          {Object.keys(stats.categoryCounts).map((category) => (
+            <li key={category}>
+              {category}: {stats.categoryCounts[category]}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div className="stats-board">
+        <h4 className="dashboardh4">Tasks Older Than 5 Days by Category:</h4>
+        <ul className="statsList">
+          {Object.keys(stats.oldTasksCounts).map((category) => (
+            <li className="dashTasks" key={category}>
+              {category}: {stats.oldTasksCounts[category]}
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
+  </div>
   );
 };
 
