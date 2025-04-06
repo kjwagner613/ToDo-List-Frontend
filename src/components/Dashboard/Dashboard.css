@@ -2,15 +2,15 @@ body {
   background-color: #121212;
   color: #e0e0e0;
   max-width: 900px;
- 
 }
 
 .statsList {
+  margin-top: 55px;
   grid-column: span 1;
   border: 1px solid #3b82f6;
   padding: 10px;
   font-size: 30px;
-  color: #3B82F6;
+  color: #3b82f6;
 }
 
 .oldTasksStats {
@@ -41,9 +41,10 @@ body {
   grid-column: span 1;
   margin-top: 55px;
 }
-
-.dashTasks {
-  color: #3B82F6;
+listByCateg .dashTasks {
+  position: relative;
+  top: 5vh;
+  color: #3b82f6;
 }
 
 .dashboardh1 {
@@ -76,22 +77,26 @@ body {
   white-space: nowrap;
   z-index: 50;
   background-color: #121212;
-
 }
 
 .dashboardh3 {
-  position: relative;
-  left: -2%;
-  top: 12%;
+  position: absolute;
+  top: 2vh;
+  left: 8vw;
 }
 
-.dashboardh4 {
+.statsList {
   position: relative;
-  left: -2%;
-  top: 32%;
-  min-width: 425px;
-  white-space: nowrap;
-  margin-top: -60px;
+  top: 9vh;
+}
+.dashboardh4 {
+  position: absolute;
+  top: 65vh;
+  left: 11vw;
+}
+statsList2 {
+  position: relative;
+  top: 4vh;
 }
 
 .listByCategory {
@@ -102,17 +107,15 @@ body {
   position: relative;
 }
 
+.listByCategory2 {
+}
+
 .task-grid {
   grid-column: span 2;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
   padding: 10px;
-}
-
-.statsList {
-  position: relative;
-  top: -7%;
 }
 
 .task-item2 {

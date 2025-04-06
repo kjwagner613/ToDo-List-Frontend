@@ -11,6 +11,39 @@ const TaskDetails = (props) => {
   const { user } = useContext(UserContext);
   const [task, setTask] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [editingCommentId, setEditingCommentId] = useState(null); // Track the comment being edited
+  const [updatedText, setUpdatedText] = useState(""); // Track the updated text
+  const [errorMessage, setErrorMessage] = useState(""); // Tracks error messages
+
+  const handleEditClick = (comment) => {
+    setEditingCommentId(comment._id);
+    setUpdatedText(comment.text);
+  };
+
+  const handleCancelClick = () => {
+    setEditingCommentId(null);
+    setUpdatedText("");
+  };
+  const [isSaving, setIsSaving] = useState(false);
+
+  const handleSaveClick = async (commentId) => {
+    setErrorMessage(""); // Clear any previous errors
+    try {
+      const updatedComment = await taskService.updateComment(taskId, commentId, { text: updatedText });
+      setTask((prevTask) => ({
+        ...prevTask,
+        comments: prevTask.comments.map((comment) =>
+          comment._id === commentId ? updatedComment : comment
+        ),
+      }));
+      setEditingCommentId(null);
+      setUpdatedText("");
+    } catch (error) {
+      console.error("Error saving comment:", error);
+      setErrorMessage("Failed to update the comment. Please try again.");
+    }
+  };
+
 
   useEffect(() => {
     const fetchTask = async () => {
@@ -89,8 +122,33 @@ const TaskDetails = (props) => {
                   {task.comments.map((comment) => (
                     <tr key={comment._id} className="comment-row">
                       <td>{new Date(comment.createdAt).toLocaleDateString()}</td>
-                      <td>{comment.author?.username || 'Unknown'}</td>
-                      <td>{comment.text || 'No text available'}</td>
+                      <td>{comment.author?.username || "Unknown"}</td>
+                      <td>
+                        {editingCommentId === comment._id ? (
+                          <input
+                            type="text"
+                            value={updatedText}
+                            onChange={(e) => setUpdatedText(e.target.value)}
+                          />
+                        ) : (
+                          comment.text || "No text available"
+                        )}
+                      </td>
+                      <td>
+                        {editingCommentId === comment._id ? (
+                          <>
+                            <button onClick={() => handleSaveClick(comment._id)} disabled={isSaving}>
+                              Save
+                            </button>
+                            <button onClick={handleCancelClick} disabled={isSaving}>
+                              Cancel
+                            </button>
+
+                          </>
+                        ) : (
+                          <button onClick={() => handleEditClick(comment)}>Edit</button>
+                        )}
+                      </td>
                     </tr>
                   ))}
                 </tbody>

@@ -59,6 +59,34 @@ const createComment = async (taskId, commentFormData) => {
   }
 };
 
+const updateComment = async (taskId, commentId, commentFormData) => {
+  try {
+    const res = await fetch(`${BASE_URL}/${taskId}/comments/${commentId}`, {
+      method: "PUT",
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(commentFormData),
+    });
+
+    // Debugging backend response
+    const rawResponse = await res.text(); // Grab the raw response text
+    console.log("Raw response from backend:", rawResponse); // Debugging step
+
+    if (!res.ok) {
+      throw new Error(`Failed to update comment: ${res.status}`);
+    }
+
+    return JSON.parse(rawResponse); // Ensure proper JSON parsing
+  } catch (error) {
+    console.error("Error updating comment:", error);
+    throw error;
+  }
+};
+
+
+
 const deleteTask = async (taskId) => {
   try {
     const res = await fetch(`${BASE_URL}/${taskId}`, {
@@ -89,4 +117,4 @@ const update = async (taskId, taskFormData) => {
   }
 };
 
-export { index, show, create, createComment, deleteTask, update };
+export { index, show, create, createComment, deleteTask, update, updateComment };

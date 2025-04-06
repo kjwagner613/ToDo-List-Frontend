@@ -75,11 +75,11 @@ const Dashboard = () => {
             ))}
           </ul>
         </div>
-        <div className="listByCategory">
+        <div className="listByCategory2">
           <h4 className="dashboardh4">Tasks Older Than 5 Days by Category:</h4>
           <ul className="statsList">
             {Object.keys(stats.oldTasksCounts).map((category) => (
-              <li className="dashTasks" key={category}>
+              <li className="statsList2" key={category}>
                 {category}: {stats.oldTasksCounts[category]}
               </li>
             ))}
