@@ -5,7 +5,7 @@ import './Dashboard.css';
 
 const Dashboard = () => {
   const { user } = useContext(UserContext);
-  const [tasks, setTasks] = useState([]);
+  const [, setTasks] = useState([]);
   const [stats, setStats] = useState({
     totalTasks: 0,
     categoryCounts: {},
@@ -60,31 +60,48 @@ const Dashboard = () => {
     });
   };
 
-  return (
-    <div className="dashboard-container">
-    <h1 className="dashboardh1">Welcome, {user.username}</h1>
-    <h2 className="dashboardh2">Here are some task metrics.</h2>
-    
+return (
+  <div className="dashboard-container">
+    <h1 className="dashboardh1">Welcome, {user?.username || 'Guest'}</h1>
+    <h2 className="dashboardh2">Here are some task metrics:</h2>
     <div className="stats-grid">
-      <div className="stats-board">
-        <h3 className="dashboardh3">Tasks by Category:</h3>
-        <ul className="statsList">
-          {Object.keys(stats.categoryCounts).map((category) => (
-            <li key={category}>
-              {category}: {stats.categoryCounts[category]}
-            </li>
-          ))}
-        </ul>
+      <div className="stats-board1">
+        <p className="stats-title">Tasks by Category</p>
+        <table className="statsTable">
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Count</th>
+            </tr>
+          </thead>
+          <tbody>
+            {Object.keys(stats.categoryCounts).map((category) => (
+              <tr key={category}>
+                <td>{category}</td>
+                <td>{stats.categoryCounts[category]}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
-      <div className="stats-board">
-        <h4 className="dashboardh4">Tasks Older Than 5 Days by Category:</h4>
-        <ul className="statsList">
-          {Object.keys(stats.oldTasksCounts).map((category) => (
-            <li className="dashTasks" key={category}>
-              {category}: {stats.oldTasksCounts[category]}
-            </li>
-          ))}
-        </ul>
+      <div className="stats-board2">
+        <p className="stats-title">Tasks Older Than 5 Days</p>
+        <table className="statsTable">
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Count</th>
+            </tr>
+          </thead>
+          <tbody>
+            {Object.keys(stats.oldTasksCounts).map((category) => (
+              <tr key={category}>
+                <td>{category}</td>
+                <td>{stats.oldTasksCounts[category]}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
